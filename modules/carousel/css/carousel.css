@@ -1,0 +1,16 @@
+/** ==========================  Carousel =================================== 
+
+.carousel .flex-control-nav.flex-control-thumbs {
+    max-height: 200px;
+    border: 1px solid grey;
+}
+
+.carousel .flex-control-nav.flex-control-thumbs li {
+    border-right: 1px solid grey;
+}
+
+.carousel .flex-direction-nav a:before {
+    margin-top: 10px;
+}
+
+**/

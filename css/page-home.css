@@ -1,0 +1,610 @@
+/* ======================================================
+   PAGE: HOME
+   Granada Luxury Suites
+   Limpieza jerárquica profesional
+   Fecha: 25/02/2026
+   ====================================================== */
+
+
+/* ======================================================
+   VARIABLES
+   ====================================================== */
+
+:root{
+    --main-color : #EFE4D6;
+    --main-color-hover : #E8C49B;
+    --accent-color: #E8C49B;
+    --accent-color-hover: #E29910;
+
+    --black-color: #333333;
+    --light-color: #F3F3F3;
+    --grey-color: #F3F3F3; 
+    --dark-grey-color: #A29F9F;
+
+    --space-xxs: 8px;
+    --space-xs: 16px;
+    --space-sm: 24px;
+    --space-md: 40px;
+    --space-lg: 60px;
+    --space-xl: 120px;
+}
+
+/* ======================================================
+   SISTEMA GLOBAL DE BOTONES – GLS
+   Fecha: 25/02/2026
+   ====================================================== */
+
+/* ==============================
+   BTN-FIX (PRIMARIO)
+============================== */
+
+body .btn-fix,
+body a.btn-fix {
+    font-size: 18px;
+	font-weight: 400px;
+    background-color: #E8C49B;
+    color: #333333;
+
+    border: 2px solid #E8C49B;
+    border-radius: 6px;
+
+    padding: 14px 22px;
+
+    text-transform: uppercase;
+
+    box-shadow: none;
+
+    transition:
+        background-color .4s ease,
+        color .4s ease,
+        border-color .4s ease;
+}
+
+/* HOVER */
+
+body .btn-fix:hover,
+body a.btn-fix:hover {
+
+    background-color: transparent;
+    color: #E8C49B;
+    border-color: #E8C49B;
+}
+
+
+/* ==============================
+   BTN-FIX-OUTLINE (SECUNDARIO)
+============================== */
+
+body .btn-fix-outline,
+body a.btn-fix-outline {
+
+    background-color: transparent;
+    color: #E8C49B;
+    font-size: 18px;
+	font-weight: 400px;
+    border: none;
+
+    padding: 14px 22px;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color .4s ease,
+        color .4s ease,
+        border-color .4s ease;
+}
+
+body .btn-fix-outline:hover {
+
+    background-color: transparent;
+    color: #e29910;
+    border: none;
+}
+
+/* ======================================================
+   FIX HEADER
+   ====================================================== */
+
+.home #content {
+    padding-top: 0;
+}
+
+.home main > section:first-child {
+    padding-top: 100px;
+}
+
+body.home header#masthead {
+    background: transparent;
+    box-shadow: none;
+}
+
+
+/* ======================================================
+   HERO (VERSIÓN FINAL ACTIVA)
+   ====================================================== */
+
+.home-hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-hero__overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+.home-hero__inner{
+    position: relative;
+    z-index: 2;
+    max-width: 1410px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.home-hero__content{
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.home-hero__title{
+    margin-bottom: var(--space-xs);
+    line-height: 1.08;
+	font-size: 62px;
+}
+
+.home-hero__title--small{
+    margin-bottom: var(--space-sm);
+	line-height: 1.08;
+	font-size: 52px;
+}
+}
+
+.home-hero__subtitle{
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: var(--space-md);
+	color: #A29F9F;
+	font-size: 42px;
+}
+
+
+/* ======================================================
+   BUSCADOR HOME (LIMPIO)
+   ====================================================== */
+
+.gls-home-search{
+    background-color: #F3EBDD;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 24px 28px;
+    max-width: 1410px;
+}
+
+.gls-home-search #gls-search-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    background-color: #F3EBDD;
+}
+
+.gls-home-search form input,
+.gls-home-search form select{
+    height: 48px;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid #d8d2c6;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: black;
+}
+
+.gls-home-search #gls-dates,
+.gls-home-search #gls-guests{
+    flex: 1 1 auto;
+    height: 48px;
+    line-height: normal;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: center;
+}
+
+.gls-home-search #gls-search-submit{
+    height: 48px;
+    padding: 0 26px;
+    background-color: var(--main-color);
+    color: black;
+    font-family: 'Bell MT', serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.25s ease,
+                background-color 0.25s ease,
+                opacity 0.25s ease;
+}
+
+.gls-home-search #gls-search-submit:hover{
+    opacity: 0.9;
+    color: whitesmoke;
+}
+
+.gls-error{
+    border-color: #c29b40;
+    background-color: #fffaf3;
+}
+
+
+/* ======================================================
+   LITEPICKER FIX
+   ====================================================== */
+
+.litepicker .container__months,
+.litepicker .month-item,
+.litepicker .container__days,
+.litepicker .month-item-weekdays-row {
+  box-sizing: border-box;
+}
+
+.litepicker .month-item-weekdays-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.litepicker .month-item-weekdays-row > div {
+  flex: 1 0 auto;
+  width: var(--litepicker-day-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  padding: 6px 0;
+}
+
+/* ======================================================
+   INTRO MARCA (VERSIÓN FINAL)
+   ====================================================== */
+
+.gls-intro{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+}
+
+.gls-intro__container{
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+    width: 1440px;
+    height: 100%;
+    align-self: stretch;
+    justify-content: space-evenly;
+	padding: 0 60px;
+    gap: 60px;
+}
+
+.gls-intro__col{
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: initial;
+    align-self: initial;
+    gap: 60px;
+}
+.gls-intro__title{
+    column-count: 1;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: var(--space-sm);
+    line-height: 55.380001px;
+    overflow-wrap: break-word;
+    position: relative;
+    text-align: left;
+    visibility: visible;
+    width: 512px;
+}
+
+.gls-intro__background{
+	background-color: #EFE4D6;
+	border-radius: 6px;
+	column-gap: 20px;
+	display: flex;
+	height: 35vh;
+	justify-content: normal;
+	line-height: 28px;
+	margin-top: -32px;
+	min-height: auto;
+	position: relative;
+	width: 100%;
+	z-index: auto;
+}
+
+.gls-intro__media{
+    height: 50vh;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.gls-intro__media img{
+	border-radius: 6px;
+    position: relative;
+    display: block;
+}
+
+.gls-intro__content{
+    order: 2;
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.gls-intro__text{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgb(48, 48, 48);
+    grid-column: 2;
+}
+
+.gls-intro__buttons{
+    grid-column: 2;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+/* ======================================================
+   PUBLICS SLIDER (VERSIÓN FINAL)
+   ====================================================== */
+
+.publics-home-slides{
+    position: relative;
+}
+
+.publics-slide{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.publics-slide-bg{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.publics-slide-bg::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,0.35);
+}
+
+.publics-slide-inner{
+    position: relative;
+    z-index: 2;
+	display: flex;
+    flex-direction: column;
+	justify-content: space-evenly;
+    background-color: #F3EBDD;
+    padding: 20px 20px;
+    width: 520px;
+	min-height: 420px;
+	margin-right: 60px;
+    margin-left: 0;
+    border-radius: 6px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.12);
+}
+.gls-home-prop-title{
+	font-size: 52px;
+    line-height: 1.15;
+	text-align: left;
+}
+
+.gls-home-prop-text{
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+	text-align: left;
+}
+
+.gls-home-prop-cta {
+    display: inline-block;
+	text-align: left;
+}
+
+
+/* ======================================================
+   EXPERIENCIAS (VERSIÓN FINAL)
+   ====================================================== */
+
+.gls-experiencias{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+}
+
+.gls-experiencias__container{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.gls-experiencias__grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+.gls-experiencia{
+    border-radius: 6px;
+    max-height: 620px;
+    padding: 20px;
+    background-color: #F3EBDD;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.gls-experiencia:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0,0,0,.12);
+}
+
+.gls-experiencia__image{
+    flex: 0 0 380px;
+    height: 380px;
+    overflow: hidden;
+}
+
+.gls-experiencia__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gls-experiencia__content{
+    padding-top: 20px;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.gls-experiencia__title{
+    font-family: "Bell MT", serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #2e2e2e;
+}
+
+.gls-experiencia__text{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.gls-experiencia__cta.btn-fix{
+    text-align: left;
+    text-transform: capitalize;
+    justify-self: center;	
+}
+
+
+/* ======================================================
+   MODALIDADES (estructura limpia – sin diseño extra)
+   ====================================================== */
+
+.gls-modalidades__container{
+    max-width: 1410px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gls-modalidades__grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: var(--space-md);
+}
+
+.gls-modalidad{
+    text-align: center;
+}
+
+.gls-modalidad__icono{
+    margin-bottom: var(--space-sm);
+}
+
+.gls-modalidad__title{
+    margin-bottom: var(--space-xs);
+}
+
+.gls-modalidad__text{
+    line-height: 1.6;
+}
+
+/* ======================================================
+   CTA FINAL (estructura limpia)
+   ====================================================== */
+
+.gls-cta{
+    text-align: center;
+}
+
+.gls-cta__container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gls-cta__title{
+    margin-bottom: var(--space-sm);
+}
+
+.gls-cta__subtitle{
+    margin-bottom: var(--space-md);
+}
+
+.gls-cta__buttons{
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 992px){
+
+    .gls-intro__container,
+    .gls-experiencias__grid,
+    .gls-modalidades__grid{
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .publics-slide-inner{
+        width: 100%;
+        padding: 20px 20px;
+    }
+
+    .gls-home-search #gls-search-form{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .gls-home-search #gls-search-submit{
+        width: 100%;
+    }
+}

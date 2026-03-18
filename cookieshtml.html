@@ -1,0 +1,1696 @@
+<div id="cookieconsent-container" class="d-none">
+<div class="ui-widget ui-widget-content ui-corner-top cookieconsent-popup">
+  <div class="container">
+    <div class="row w-100">
+      <div class="col-md-8">
+        <span class="content-popup-cookie-consent">
+          <p>Este sitio web usa cookies. Algunas cookies son imprescindibles para navegar por el sitio web correctamente (técnicas). También usamos cookies de seguimiento/análisis estadístico (analíticas), para determinar si el sitio cumple los objetivos del negocio y mejorarlo. Asimismo, usamos cookies comportamentales que ayudan a determinar si las campañas de publicidad están bien orientadas y permiten que la publicidad que ve cuando navega por otros sitios se personalice a los productos o servicios que ha visitado, en lugar de ser publicidad genérica o aleatoria. Puede otorgar consentimiento a todas o configurar los tipos de cookies que desea permitir.
+          </p>
+        </span>
+        <div class="change-container">
+          <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="change-settings-popup-button" style="width: auto !important;" data-bs-toggle="modal" data-bs-target="#cookieModal">Configurar</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="cookieconsent-button-wrap"></div>
+        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-aceptar-cookies" onclick="setcookie(['analiticas','sociales','comportamentales']);">
+          Aceptar todas las cookies
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="cookieModal" role="dialog" aria-labelledby="cookieModalLabel" aria-hidden="true" style="z-index:29999999999999;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="row">
+          <!--<h5 class="modal-title col-md-4" id="logocliente"></span>-->
+          <span class="cookieh5 modal-title col-md-12" id="titulomodal">Configuración de cookies</span>
+        </div>
+      </div>
+      <div class="modal-body">
+         <div class="d-flex">
+            <ul class="nav nav-tabs d-flex flex-column align-items-start col-md-3" role="tablist">
+              <li role="presentation" class="">
+                <a href="#home" aria-controls="home" role="tab" data-bs-toggle="tab" class="nav-link active" aria-selected="true">
+                    Definición
+                </a>
+              </li>
+                <li role="presentation" class="">
+                  <a href="#profile" class="nav-link" aria-controls="profile" role="tab" data-bs-toggle="tab">
+                    Técnicas
+                  </a>
+              </li>
+              <li role="presentation" class="">
+                  <a href="#messages" class="nav-link" aria-controls="messages" role="tab" data-bs-toggle="tab">
+                    Analíticas
+                  </a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#comportamentales" class="nav-link" aria-controls="comportamentales" role="tab" data-bs-toggle="tab">
+                  Comportamentales
+                </a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#personalizacion" class="nav-link" aria-controls="personalizacion" role="tab" data-bs-toggle="tab">
+                  Personalización
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                  <div class="container row justify-content-between align-items-center arreglo-5 solob5">
+                    <span class="cookieh4">Definición</span>
+                  </div>
+                    <p>Las cookies son ficheros de texto que se descargan en su dispositivo al cargar las páginas web y que permiten, entre otros, almacenar información técnica necesaria para la navegación, reconocerle como usuario, registrar datos estadísticos de uso o usarse con fines publicitarios.</p>
+                    <p>Aquí puede consultar las cookies que usamos y configurar sus preferencias. Al pulsar sobre "Confirmar preferencias", se guardará la selección que ha realizado, pudiendo cambiarla posteriormente. Más información en nuestra sección "Política de cookies".</p>
+                </div>
+              
+              
+                <div role="tabpanel" class="tab-pane" id="profile">
+                  <div class="container row justify-content-between align-items-center arreglo-5 solob5">
+                    <span class="cookieh4 col-auto">Técnicas</span>
+                    <p class="col-auto">Activas siempre</p>
+                  </div>  
+                  <p>Necesarias para el buen funcionamiento de la web, no pueden rechazarse. Este tipo de cookies no recogen datos personales ni se usan con fines analíticos o publicitarios. Por ejemplo, sirven para identificar usuarios en la sesión, recoger la fecha y hora de la última conexión, tomar los parámetros necesarios para navegar en la web y mostrar correctamente el contenido de la web, acceder a secciones restringidas, controlar la comunicacion de datos, recordar los elementos que han sido añadidos a un carrito, utilizar elementos de seguridad durante la navegación, entre otros.</p>
+                  <a href="#" class="mas-info funcionales ui-button-text-only">Información de las cookies</a>
+                </div>
+              
+              
+                <div role="tabpanel" class="tab-pane" id="messages">
+                  <div class="container row justify-content-between align-items-center arreglo-5 solob5">
+                    <span class="cookieh4 col-auto">Analíticas</span>
+                    <div class="switch-container switch-ios col-auto">
+                      <input type="checkbox" class="ios" name="ios-analiticas" id="ios-analiticas" data-id="analiticas"/>
+                      <label for="ios-analiticas"></label>
+                     </div>
+                  </div>  
+                  <p>Estas cookies permiten registrar su visita, procedencia y navegación, con fines analíticos y estadísticos. Nos ayudan a mejorar la web, saber qué secciones son más o menos populares, la procedencia de las visitas (si viene de forma directa, por SEO, por redes sociales, a través de otra web o de alguna campaña) y ayuda a determinar si el sitio cumple con los objetivos del negocio (por ejemplo, si se registran compras o peticiones de contacto). Esto se realiza usando herramientas como Google Analytics.</p>
+                  <a href="#" class="mas-info analiticas ui-button-text-only">Información de las cookies</a>
+                </div>
+                  
+                  
+                  <!--  <div role="tabpanel" class="tab-pane" id="settings">
+                      <div class="container row justify-content-between align-items-center">
+                        <h4>Sociales</h4>
+                        <div class="switch-container switch-ios">
+                  <input type="checkbox" class="ios" name="ios-sociales" id="ios-sociales" data-id="sociales"/>
+                  <label for="ios-sociales"></label>
+                  </div>
+                      </div>  
+                      <p>Las cookies sociales son las que establecen las plataformas de redes sociales en las páginas web para que el usuario pueda compartir contenido con sus contactos. Estas cookies pueden rastrear la actividad del usuario fuera de la propia red social, lo que puede afectar al contenido que ve en otras plataformas o a la publicidad que recibe.</p>
+                      <a href="#" class="mas-info sociales ui-button-text-only">Información de las cookies</a>
+                    </div> -->
+                  
+                  
+                <div role="tabpanel" class="tab-pane" id="comportamentales">
+                  <div class="container row justify-content-between align-items-center arreglo-5 solob5">
+                    <span class="cookieh4 col-auto">Comportamentales</span>
+                    <div class="switch-container switch-ios col-auto">
+                      <input type="checkbox" class="ios" name="ios-comportamentales" id="ios-comportamentales" data-id="comportamentales"/>
+                      <label for="ios-comportamentales"></label>
+                    </div>
+                  </div>  
+                  <p>Estas cookies ayudan a determinar si las campañas de publicidad están correctamente enfocadas y también sirven para que cuando navega por otros sitios vea publicidad adaptada a sus hábitos de navegación, mostrándole anuncios relacionados con sitios, productos o servicios que ha visitado (lo que se conoce como remarketing). Desactivarlas no hará que vea menos publicidad, solo que esta será más aleatoria y, probablemente, menos relevante. Estas cookies suelen provenir de herramientas publicitarias como Google Ads, Facebook Ads, etc. De cualquier modo, en cualquier momento puede borrar desde su navegador todas las cookies. </p>
+                  <a href="#" class="mas-info comportamentales ui-button-text-only">Información sobre cookies</a>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="personalizacion">
+                  <div class="container row justify-content-between align-items-center arreglo-5 solob5">
+                    <span class="cookieh4 col-auto">Personalización</span>
+                    <p class="col-auto">No presentes</p>
+          </div>
+                    <p>Registran entre otros datos, el idioma en el que se ha accedido a la web y cargado la aplicación y, a la hora de reproducir un vídeo, la opción de volumen o la resolución seleccionada por el usuario.</p>
+                    <p>Permiten conservar algunas características generales del usuario en la página Web. Nos referimos como por ejemplo al idioma preferido por el usuario, el navegador que ha usado para acceder a la web o las opciones de volumen en los vídeos preferidas por el usuario.</p>
+                    <p>No utilizamos cookies de personalización necesarias para el buen funcionamiento de la web.</p>
+                </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal-body d-none">
+        <div class="row">
+          <div class="col-md-3 d-flex justify-content-center mt-4">
+            <a href="#" class="volver ui-button-text-only"><span class="cookieh5"><div title="Previous" class="arrow prev">&laquo; previous</div> Volver</span></a>
+          </div>  
+          <div class="col-md-9">
+            <!--Módulo de cookie con más información-->
+            <div class="cookie">
+              
+              <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida analiticas">
+                <div class="col-md-6">
+                  <span class="cookieh5">Bing.com / Microsoft</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#bing" role="button" aria-expanded="false" aria-controls="bing">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="bing">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">ABDEF</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Bing.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Servicios publicitarios de Bing</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">MUID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Bing.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada por Microsoft para generar un ID único de usuario</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">SRCHD</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Bing.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada en relación con la integración de Bing en la web. La cookie es necesaria para algunas funciones de mapeo</p></div>
+                    </div>
+                    <hr>
+                     <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">SRCHUID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Bing.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada en relación con la integración de Bing en la web. La cookie es necesaria para algunas funciones de mapeo</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">SRCHUSR</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Bing.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada en relación con la integración de Bing en la web. La cookie es necesaria para algunas funciones de mapeo</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_uetsid</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Bing.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 día</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para permitir interactuar con un usuario que ya ha visitado nuestro sitio web. Caduca 30 minutos después de finalizar la sesión de navegación.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_uetvid</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Bing.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">26 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para rastrear a los visitantes en las múltiples webs para presentar publicidad relevante basada en las preferencias del visitante.</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+              <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida comportamentales">
+                <div class="col-md-6">
+                  <span class="cookieh5">Doubleclick.net / Google</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#doubleclick" role="button" aria-expanded="false" aria-controls="doubleclick">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="doubleclick">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">DSID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Doubleclick.net</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">14 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>El uso de la cookie de DoubleClick permite a Google y a sus socios publicar anuncios basados en las visitas que los usuarios realizan en sus sitios o en otros sitios de Internet.</p></div>
+                    </div>
+                    <hr>
+                   <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">IDE</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Doubleclick.net</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">2 años</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>El uso de la cookie de DoubleClick permite a Google y a sus socios publicar anuncios basados en las visitas que los usuarios realizan en sus sitios o en otros sitios de Internet.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">RUL</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Doubleclick.net</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada por DoubleClick para determinar si la publicidad de una web ha sido mostrada adecuadamente. Esto se lleva a cabo para hacer más eficientes los esfuerzos de marketing.</p></div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+              <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida comportamentales">
+                <div class="col-md-6">
+                  <span class="cookieh5">Facebook.com</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#facebook" role="button" aria-expanded="false" aria-controls="facebook">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="facebook">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">C_USER</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">90 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada por facebook permitiendo comprobar la id de usuario a los que le gusta la página sin estar logueado</p></div>
+                    </div>
+                    <hr>
+                   <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">FR</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">90 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada por facebook para la visualización de los plug-in sociales y compartir contenidos en su red social.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">SPIN</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 día</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookies necesarias para el complemento social de Facebook. Identificador del sitio y cookies para compartir contenidos.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">XS</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">90 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookies necesarias para el complemento social de Facebook. Se utiliza junto con la cookie c_user para autenticar tu identidad en Facebook.</p></div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+              <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida analiticas">
+                <div class="col-md-6">
+                  <span class="cookieh5">Google.com</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#google" role="button" aria-expanded="false" aria-controls="google">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="google">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">1P_JAR</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Google.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">30 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie de Google, necesaria para recopilar estadísticas del sitio web y rastrear las tasas de conversión.</p></div>
+                    </div>
+                    <hr>
+                   <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">ANID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Google.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookies con finalidad publicitaria del servicio Google Adwords. Contienen un valor generado aleatoriamente único que permite a la Plataforma para distinguir navegadores y dispositivos. Esta información es utilizada para medir el rendimiento de los anuncios y proporcionar recomendaciones relativas a productos basadas en datos estadísticos.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">NID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Google.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">6 meses</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada por Google para almacenar las preferencias del usuario y la información durante la visualización de las páginas con los mapas de Google.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__Secure-3PAPISID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Google.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">2 años</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada con fines de segmentación para crear un perfil de los intereses del visitante del sitio web con el fin de mostrar publicidad relevante y personalizada de Google.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__Secure-3PSID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Google.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">2 años</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada con fines de segmentación para crear un perfil de los intereses del visitante del sitio web con el fin de mostrar publicidad relevante y personalizada de Google.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__Secure-3PSIDCC</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Google.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para entregar anuncios más relevantes para usted y sus intereses.</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+              <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida analiticas">
+                <div class="col-md-6">
+                  <span class="cookieh5">Hotjar.com</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#hotjar" role="button" aria-expanded="false" aria-controls="hotjar">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="hotjar">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_BEAMER_DATE_*</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">300 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Esta cookie es establecida por Beamer Stores para almacenar la última fecha en la que se abrió el feed.</p></div>
+                    </div>
+                    <hr>
+                     <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_BEAMER_FIRST_VISIT_*</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">3000 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Esta cookie es establecida por Beamer Stores para almacenar la fecha de la primera interacción de este usuario con información.</p></div>
+                    </div>
+                    <hr>
+                     <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_BEAMER_LAST_POST_SHOWN_*</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">300 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para almacenar el ID de la última publicación mostrada como un avance.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_BEAMER_LAST_UPDATE_*</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">300 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Esta cookie es establecida por Beamer Stores para almacenar la marca de tiempo de la última vez que se actualizó el número de publicaciones no leídas para este usuario.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_BEAMER_USER_ID_*</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">300 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Esta cookie es establecida por Beamer Stores para almacenar una identificación interna de un usuario.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_hjAbsoluteSessionInProgress</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">30 minutos</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para contar las veces que un sitio web ha sido visitado por diferentes visitantes. Esto se consigue asignando un ID aleatorio al visitante, para evitar el registro doble del visitante.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_hjTLDTest</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Sesión</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para detectar el posicionamiento SEO de la página actual.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_hjid</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para establecer un identificador para la sesión. Esto permite a la web obtener datos del comportamiento del visitante con propósitos estadísticos.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_hjIncludedInPageviewSample</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">30 minutos</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para determinar si la navegación del usuario debería registrarse en un cierto lugar estadístico.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_hjIncludedInSessionSample</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Hotjar.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">30 minutos</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para registrar datos del comportamiento del visitante en la web. Esto se utiliza para el análisis interno y la optimización de la web.</p></div>
+                    </div>
+                    <hr>
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+               <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida analiticas">
+                <div class="col-md-6">
+                  <span class="cookieh5">Facebook.com</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#facebook2" role="button" aria-expanded="false" aria-controls="facebook2">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="facebook2">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_fbp</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">90 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie de Facebook utilizada para recoger estadísticas sobre las visitas al sitio y el rendimiento de las campañas publicitarias.</p></div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+              <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida analiticas">
+                <div class="col-md-6">
+                  <span class="cookieh5">Google Analytics</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#analytics" role="button" aria-expanded="false" aria-controls="analytics">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="analytics">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_ga</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">2 años</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para distinguir usuarios únicos asignando un número generado aleatoriamente como un identificador de cliente.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_ga_*</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">2 años</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para limitar el porcentaje de solicitudes.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_gat_*</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Unos segundos</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Medición interna con Google Analytics. Cookie utilizada para limitar el porcentaje de solicitudes. Si has implementado Google Analytics mediante Google Tag Manager, esta cookie se llamará _dc_gtm_'<'property-id>'.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_gid</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Facebook.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 día</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada por Google Analytics para almacenar y actualizar un valor único para cada página visitada. La cookie se actualiza cada vez que envía los datos a Google Analytics.</p></div>
+                    </div>
+                    <hr>
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+              <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida funcionales">
+                <div class="col-md-6">
+                  <span class="cookieh5">Idento</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#idento" role="button" aria-expanded="false" aria-controls="idento">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="idento">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">idento_cookie_consent</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Propia</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Funcional</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para almacenar el estado de consentimiento de cookies del usuario para el dominio actual.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">idento_cookie_origen</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Propia</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 día</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Funcional</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie funcional que almacena el referrer de la visita y la página donde el usuario ha aterrizado para informar de ello en el caso de que el visitante envíe un formulario de contacto y poder atender su petición correctamente.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">idento_fromAdWords</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Propia</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">30 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Funcional</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie funcional que identifica si un usuario viene de una campaña para mostrarle el teléfono correcto (1 mes).</p></div>
+                    </div>
+                   <hr>
+                   <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">PHPSESSID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Propia</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Sesión</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Funcional</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie nativa de PHP que permite a la web guardar datos serializados de estado. En esta web se usa para establecer sesiones de usuario pasando datos de estado a través de una cookie temporal también conocida como Cookie de sesión. La cookie PHPSESSID no tiene caducidad establecida ya que desaparece cuando se cierra la web.</p></div>
+                    </div>
+                   <hr>
+                   <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">PHPSESSID</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Propia</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Sesión</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Funcional</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie nativa de PHP que permite a la web guardar datos serializados de estado. En esta web se usa para establecer sesiones de usuario pasando datos de estado a través de una cookie temporal también conocida como Cookie de sesión. La cookie PHPSESSID no tiene caducidad establecida ya que desaparece cuando se cierra la web.</p></div>
+                    </div>
+                   <hr>
+                   <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">idento_FromCampaign</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Propia</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">20 años</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Funcional</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie que almacena el valor del parámetro gclid, pero no tiene ningún uso, en próximas actualizaciones se borrará.</p></div>
+                    </div>
+                   <hr>
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+               <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida analiticas">
+                <div class="col-md-6">
+                  <span class="cookieh5">Google Tag Manager</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#gtagm" role="button" aria-expanded="false" aria-controls="gtagm">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="gtagm">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">_gcl_au</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Google Tag Manager</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">3 meses</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada por Google AdSense para experimentar con la eficiencia publicitaria a través de las webs usando sus servicios.</p></div>
+                    </div>
+                   
+                    
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+              <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida funcionales">
+                <div class="col-md-6">
+                  <span class="cookieh5">Wordpress</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#wordpress" role="button" aria-expanded="false" aria-controls="wordpress">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="wordpress">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">wp-settings-1</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Wordpress</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Funcional</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie de Wordpress para personalizar su vista de la interfaz de administración y posiblemente también la interfaz principal del sitio.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">wp-settings-time-1</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Wordpress</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Funcional</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie de WordPress que identifica al usuario con un número coincidente al que posee en la base de datos de usuarios de la web. Sirve para personalizar la vista de la interfaz de administración, así como la interfaz principal del sitio.</p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+                <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida comportamentales">
+                <div class="col-md-6">
+                  <span class="cookieh5">Linkedin</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#linkedin" role="button" aria-expanded="false" aria-controls="linkedin">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="linkedin">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">UserMatchHistory</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">linkedin.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 mes</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para la sincronización de ID de LinkedIn Ads.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">bcookie</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">linkedin.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">2 años</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie de identificación del navegador.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">lang</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">linkedin.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Sesión</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para definir el idioma durante la navegación.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">lidc</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">linkedin.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 día</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para compartir contenido en la red social mientras estás logueado en tu cuenta, así como obtener analíticas.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">lissc</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">linkedin.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para garantizar que el atributo SameSite es correcto para todas las cookies en dicho navegador.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">lang</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">ads.linkedin.com</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Sesión</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Comportamental</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para recordar la configuración de idioma de un usuario.</p></div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+
+ <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida analiticas">
+                <div class="col-md-6">
+                  <span class="cookieh5">Inspeclet</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#inspeclet" role="button" aria-expanded="false" aria-controls="inspeclet">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="inspeclet">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__insp_dct</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Inspectlet</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">No expira</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para registrar datos estadísticos del comportamiento del visitante en la web. Esto se utiliza para análisis internos por el operador de la web.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__insp_norec_sess</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Inspectlet</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para hacer más eficiente el streaming de contenido en vídeo.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__insp_nv</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Inspectlet</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Sesión</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para hacer más eficiente el streaming de contenido en vídeo.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__insp_slim</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Inspectlet</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para hacer más eficiente el streaming de contenido en vídeo.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__insp_targlpt</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Inspectlet</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para almacenar información sobre la posición del mouse, clics, desplazamientos y elementos y texto resaltados.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__insp_targlpu</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Inspectlet</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 año</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para registrar datos estadísticos del comportamiento del visitante en la web. Esto se utiliza para análisis internos por el operador de la web.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">__insp_wid</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Inspectlet</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Sesión</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookie utilizada para hacer más eficiente el streaming de contenido en vídeo.</p></div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+ <!--PROVEEDOR DE COOKIES-->
+              <!--AÑADIR CLASES: funcionales,analiticas,sociales,comportamentales-->
+              <div class="row justify-content-center align-items-center cookie-comprimida analiticas">
+                <div class="col-md-6">
+                  <span class="cookieh5">Adinton</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#adsmkt" role="button" aria-expanded="false" aria-controls="adsmkt">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="adsmkt">
+                  <div class="card card-body container">
+                  <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">adsmkt_*</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Adinton</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">90 días</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookies de adinton para analizar el comportamiento y monitorizar el uso del usuario dentro de la página.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">adsmkt_v8_journey</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Adinton</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 semana</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookies de adinton para analizar el comportamiento y monitorizar el uso del usuario dentro de la página.</p></div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">adsmkt_v8_ns</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Adinton</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">1 semana</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Analítica</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12"><p>Cookies de adinton para analizar el comportamiento y monitorizar el uso del usuario dentro de la página.</p></div>
+                    </div>
+                    <hr>
+
+                  </div>
+                </div>
+              </div>  
+              <!--FIN DE COOKIE-->
+
+              
+              <div class="row justify-content-center align-items-center cookie-comprimida sociales">
+                <div class="col-md-6">
+                  <span class="cookieh5">Cookie social</span>
+                </div>  
+                <div class="col-md-6 text-right">
+                  <a class="ui-button-text-only ver-cookie" data-bs-toggle="collapse" href="#cookiesocial" role="button" aria-expanded="false" aria-controls="cookiesocial">
+                    Ver cookies <div title="End" class="arrow down"></div>
+                  </a>
+                </div> 
+                <div class="collapse col-12 info" id="cookiesocial">
+                  <div class="card card-body container">
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">Nombre</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Huésped</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Duración</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Tipo</div>
+                    </div>
+                    
+                    <hr>
+                    <div class="row">
+                      <div class="col-4">Nombre</div>
+                      <div class="col-8 gris">Nombre</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Huésped</div>
+                      <div class="col-8 gris">Huésped</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Duración</div>
+                      <div class="col-8 gris">Duración</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">Tipo</div>
+                      <div class="col-8 gris">Tipo</div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              
+              
+            </div>  
+            <!-- Fin del módulo-->
+          </div>  
+        </div>
+      </div>  
+      <div class="modal-footer">
+        <a href="#" class="confirmar ui-button-text-only close" onclick="checkchecks();"  data-bs-dismiss="modal" aria-label="Close">Confirmar preferencias</a>
+        <button type="button" class="btn btn-primary ui-aceptar-cookies close" onclick="setcookie(['analiticas','sociales','comportamentales']);"  data-bs-dismiss="modal" aria-label="Close">Aceptar todas</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cookie-change cookieconsent_fixed_link" id="change-settings-popup-button" data-bs-toggle="modal" data-bs-target="#cookieModal">
+   🍪 Cookies
+</div>
+<script>
+if(listadoCookies.length>0){
+  var listadoCookies=['funcionales','analiticas','sociales','comportamentales'];
+  listadoCookies=listadoCookies.filter(e=>document.cookie.indexOf(e)!=-1);
+  jQuery('div#change-settings-popup-button').click(function (e) {
+    listadoCookies.forEach(e=>{jQuery('#ios-'+e).prop('checked',true);});
+  });
+} else{
+    jQuery('#cookieconsent-container').removeClass('d-none');
+      jQuery('body').addClass('no-scroll');
+  }
+  jQuery('a.confirmar.close, .ui-aceptar-cookies.close').click(function() {
+  jQuery('#cookieconsent-container').addClass('d-none');
+    jQuery('body').removeClass('no-scroll');
+});
+  
+jQuery('a.mas-info').click(function () {
+    if(jQuery(this).hasClass('funcionales')) {var tipo = 'funcionales';}
+    else if(jQuery(this).hasClass('analiticas')) {var tipo = 'analiticas';}
+    else if(jQuery(this).hasClass('sociales')) {var tipo = 'sociales';}
+    else if(jQuery(this).hasClass('comportamentales')) {var tipo = 'comportamentales';}  
+    jQuery('.modal-body').toggleClass('d-none').addClass(tipo);
+  console.log(tipo);
+});
+  
+jQuery('a.volver').click(function () {
+    jQuery('.modal-body').toggleClass('d-none').removeClass('funcionales analiticas sociales comportamentales');
+});
+  
+  if(getCookie("funcionales")==null) {
+    /* NO TIENE FUNCIONALES */
+    if(getCookie("comportamentales")==null || getCookie("analiticas")==null) {
+      /* SOLO 1 COOKIE Y NO ES FUNCIONALES */
+      jQuery('#cookieconsent-container').removeClass('d-none');
+      jQuery('body').addClass('no-scroll');
+    } else {
+          var hoy = new Date(Date.now() + 86400e3);
+        document.cookie = "funcionales=funcionales ; expires=" + hoy + "; path=/; SameSite=Strict;";
+          jQuery('body').removeClass('no-scroll');
+        }
+      }
+
+  
+</script>
+<style>
+@media only screen and (max-width: 600px) {
+  p    {font-size:11px !important; line-height: 16px;}
+}
+@media only screen and (min-width: 770px) {
+  #cookieModal .modal-dialog {
+      min-width: 740px;
+  }
+}
+</style>
