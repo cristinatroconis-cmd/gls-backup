@@ -1,0 +1,26 @@
+{
+    "key": "group_6993691e38aa3",
+    "title": "Home – Estructura Completa",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "6443"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "acfml_field_group_mode": "translation",
+    "modified": 1771432071
+}
