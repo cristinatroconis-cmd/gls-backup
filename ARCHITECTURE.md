@@ -1,9 +1,4 @@
 
----
-
-# 📄 `docs/Arquitectura.md`
-
-```md
 # Arquitectura – Granada Luxury Suites
 
 ## 🧠 Filosofía
