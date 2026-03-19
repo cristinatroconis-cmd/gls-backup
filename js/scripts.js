@@ -351,9 +351,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const baseUrl = '/apartamentos/';
 
         const params = new URLSearchParams({
-            checkin:  checkin,
-            checkout: checkout,
-            guests:   persons
+            arrival:   checkin,
+            departure: checkout,
+            guests:    persons
         });
 
         const finalUrl = `${baseUrl}?${params.toString()}`;

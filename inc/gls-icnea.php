@@ -209,3 +209,40 @@ function gls_icnea_get_available_post_ids($arrival, $departure, $guests = 2, $la
   set_transient($list_key, $available_ids, 10 * MINUTE_IN_SECONDS);
   return $available_ids;
 }
+
+/**
+ * Devuelve un valor GET saneado.
+ */
+function gls_icnea_get_query_var($keys) {
+  $keys = (array) $keys;
+
+  foreach ($keys as $key) {
+    if (isset($_GET[$key]) && $_GET[$key] !== '') {
+      return sanitize_text_field(wp_unslash($_GET[$key]));
+    }
+  }
+
+  return '';
+}
+
+/**
+ * Normaliza los parámetros del buscador para aceptar ambas nomenclaturas:
+ * - arrival / departure
+ * - checkin / checkout
+ */
+function gls_icnea_get_search_args_from_request() {
+  $arrival_raw   = gls_icnea_get_query_var(['arrival', 'checkin']);
+  $departure_raw = gls_icnea_get_query_var(['departure', 'checkout']);
+  $guests_raw    = gls_icnea_get_query_var(['guests', 'people', 'persons']);
+
+  $arrival   = gls_icnea_normalize_date($arrival_raw);
+  $departure = gls_icnea_normalize_date($departure_raw);
+  $guests    = max(1, (int) $guests_raw ?: 2);
+
+  return [
+    'arrival'   => $arrival,
+    'departure' => $departure,
+    'guests'    => $guests,
+    'has_dates' => !empty($arrival) && !empty($departure),
+  ];
+}

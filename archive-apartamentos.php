@@ -5,6 +5,7 @@
  * GLS – Hero específico para páginas de archivo
  */
 get_template_part('template-parts/gls-page-hero');
+
 ?>
 
 <main>
@@ -23,12 +24,12 @@ get_template_part('template-parts/gls-page-hero');
             // ============================
             $paged = get_query_var('paged') ?: 1;
 
-            // Params desde Home (mismo formato que ICNEA)
-            $arrival   = isset($_GET['arrival']) ? sanitize_text_field($_GET['arrival']) : '';
-            $departure = isset($_GET['departure']) ? sanitize_text_field($_GET['departure']) : '';
-            $guests    = isset($_GET['guests']) ? (int) $_GET['guests'] : 2;
+            $search_args = gls_icnea_get_search_args_from_request();
 
-            $has_filter = (!empty($arrival) && !empty($departure));
+            $arrival    = $search_args['arrival'];
+            $departure  = $search_args['departure'];
+            $guests     = $search_args['guests'];
+            $has_filter = $search_args['has_dates'];
 
             /**
              * available_ids:
