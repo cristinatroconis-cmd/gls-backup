@@ -124,6 +124,29 @@ function gls_icnea_is_available($daily_rates_json, $nights) {
 }
 
 /**
+ * Devuelve el ID ICNEA para un post:
+ * 1. Lee el campo técnico `icnea_id` (ACF).
+ * 2. Si no existe o está vacío, extrae el ID desde la URL del campo `boton_de_reserva`.
+ *
+ * @param int $post_id
+ * @return int  El ID ICNEA, o 0 si no se puede determinar.
+ */
+function gls_icnea_get_id_for_post($post_id) {
+  $post_id = (int) $post_id;
+
+  // Prioridad: campo técnico dedicado.
+  $icnea_id = (int) get_field('icnea_id', $post_id);
+  if ($icnea_id > 0) {
+    return $icnea_id;
+  }
+
+  // Fallback: extraer desde la URL del botón de reserva.
+  $btn = get_field('boton_de_reserva', $post_id);
+  $url = is_array($btn) ? ($btn['url'] ?? '') : (string) $btn;
+  return gls_icnea_extract_id_from_url($url);
+}
+
+/**
  * Devuelve IDs disponibles para esas fechas+huéspedes.
  * Cachea el listado para paginar correctamente.
  *
@@ -162,10 +185,8 @@ function gls_icnea_get_available_post_ids($arrival, $departure, $guests = 2, $la
   $errors = 0;
 
   foreach ($all->posts as $post_id) {
-    $btn = get_field('boton_de_reserva', $post_id);
-    $url = is_array($btn) ? ($btn['url'] ?? '') : (string)$btn;
-
-    $icnea_id = gls_icnea_extract_id_from_url($url);
+    // Primero intenta el campo técnico dedicado; fallback a extracción desde URL.
+    $icnea_id = gls_icnea_get_id_for_post($post_id);
     if (!$icnea_id) continue;
 
     $dr = gls_icnea_daily_rates($icnea_id, $arrival, $departure, $guests, $lang);

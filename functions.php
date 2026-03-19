@@ -618,3 +618,5 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_archive_apartamentos_css');
 
 require_once get_stylesheet_directory() . '/inc/gls-icnea.php';
 require_once get_stylesheet_directory() . '/inc/acf-json.php';
+// Migración temporal: poblar icnea_id desde boton_de_reserva. Eliminar tras migrar.
+require_once get_stylesheet_directory() . '/inc/gls-migrate-icnea.php';
