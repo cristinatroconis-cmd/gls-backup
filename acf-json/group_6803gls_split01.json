@@ -1,0 +1,118 @@
+{
+    "key": "group_6803gls_split01",
+    "title": "GLS \u2013 Split Section (Luxury Demo)",
+    "fields": [
+        {
+            "key": "field_6803split_eyebrow",
+            "label": "Eyebrow (etiqueta peque\u00f1a sobre el t\u00edtulo)",
+            "name": "gls_split_eyebrow",
+            "type": "text",
+            "instructions": "Texto peque\u00f1o en may\u00fasculas que aparece sobre el t\u00edtulo. Ejemplo: \u201cLuxury Experience\u201d.",
+            "required": 0,
+            "placeholder": "Luxury Experience",
+            "maxlength": 60
+        },
+        {
+            "key": "field_6803split_title",
+            "label": "T\u00edtulo (H2)",
+            "name": "gls_split_title",
+            "type": "text",
+            "instructions": "T\u00edtulo principal de la secci\u00f3n.",
+            "required": 0,
+            "placeholder": "Discover Granada Luxury Suites",
+            "maxlength": 120
+        },
+        {
+            "key": "field_6803split_text",
+            "label": "Texto del cuerpo",
+            "name": "gls_split_text",
+            "type": "textarea",
+            "instructions": "P\u00e1rrafo descriptivo debajo del t\u00edtulo.",
+            "required": 0,
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_6803split_link_primary",
+            "label": "Bot\u00f3n principal (CTA)",
+            "name": "gls_split_link_primary",
+            "type": "link",
+            "instructions": "Enlace del bot\u00f3n principal (fondo dorado). Deja vac\u00edo para ocultar.",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_6803split_link_secondary",
+            "label": "Enlace secundario",
+            "name": "gls_split_link_secondary",
+            "type": "link",
+            "instructions": "Enlace de texto secundario (sin fondo). Deja vac\u00edo para ocultar.",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_6803split_image",
+            "label": "Imagen",
+            "name": "gls_split_image",
+            "type": "image",
+            "instructions": "Imagen de la columna visual. Tama\u00f1o recomendado: 800\u00d7600 px o superior.",
+            "required": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_6803split_bg_variant",
+            "label": "Variante de fondo",
+            "name": "gls_split_bg_variant",
+            "type": "select",
+            "instructions": "Elige el color de fondo de la secci\u00f3n.",
+            "required": 0,
+            "choices": {
+                "": "Blanco (por defecto)",
+                "light": "Crema claro (--main-color)",
+                "dark": "Oscuro / negro"
+            },
+            "default_value": "",
+            "allow_null": 1,
+            "ui": 1
+        },
+        {
+            "key": "field_6803split_img_pos",
+            "label": "Posici\u00f3n de la imagen",
+            "name": "gls_split_image_position",
+            "type": "select",
+            "instructions": "D\u00f3nde aparece la imagen respecto al texto.",
+            "required": 0,
+            "choices": {
+                "right": "Derecha (por defecto)",
+                "left": "Izquierda"
+            },
+            "default_value": "right",
+            "allow_null": 0,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-luxury-section-demo.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "Campos ACF para la secci\u00f3n split (2 columnas luxury). Se muestran en p\u00e1ginas con la plantilla \u201cLuxury Section Demo\u201d.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1743716006
+}
