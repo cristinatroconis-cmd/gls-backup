@@ -67,21 +67,20 @@ body.home header#masthead {
 .home-hero__title{
     margin-bottom: var(--space-xs);
     line-height: 1.08;
-	font-size: 62px;
+	font-size: var(--gls-text-hero);
 }
 
 .home-hero__title--small{
     margin-bottom: var(--space-sm);
 	line-height: 1.08;
-	font-size: 52px;
-}
+	font-size: var(--gls-text-3xl);
 }
 
 .home-hero__subtitle{
     font-family: 'Open Sans', sans-serif;
     margin-bottom: var(--space-md);
 	color: #A29F9F;
-	font-size: 42px;
+	font-size: var(--gls-text-2xl);
 }
 
 

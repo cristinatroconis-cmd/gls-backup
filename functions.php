@@ -434,18 +434,44 @@ require_once get_stylesheet_directory() . '/inc/gls-migrate-icnea.php';
 
 /* =====================================================
    HOME TEMPLATE
-   Fuerza page-home-nueva.php como front page sin requerir
-   cambios manuales en WP Admin. Funciona con cualquier
-   página asignada como front page en Ajustes > Lectura.
+   Fuerza page-home-nueva.php en la front page solo cuando:
+     a) La página asignada como front page en Ajustes > Lectura
+        ya tiene ese template seleccionado, O
+     b) Se define la constante GLS_FORCE_HOME_TEMPLATE = true
+        (útil en entornos de staging o si se quiere forzar sin
+        tocar WP Admin).
+
+   Por defecto la constante es false: WP Admin manda.
+   Para activar el override, añade en wp-config.php:
+     define( 'GLS_FORCE_HOME_TEMPLATE', true );
    ===================================================== */
 
+if ( ! defined( 'GLS_FORCE_HOME_TEMPLATE' ) ) {
+    define( 'GLS_FORCE_HOME_TEMPLATE', false );
+}
+
 function gls_force_home_template( $template ) {
-    if ( is_front_page() ) {
-        $home_tpl = get_stylesheet_directory() . '/page-home-nueva.php';
-        if ( file_exists( $home_tpl ) ) {
-            return $home_tpl;
-        }
+    if ( ! is_front_page() ) {
+        return $template;
     }
+
+    $home_tpl = get_stylesheet_directory() . '/page-home-nueva.php';
+
+    if ( ! file_exists( $home_tpl ) ) {
+        return $template;
+    }
+
+    // Caso b): override explícito por constante.
+    if ( GLS_FORCE_HOME_TEMPLATE ) {
+        return $home_tpl;
+    }
+
+    // Caso a): la página asignada como front page ya usa este template.
+    $front_page_id = (int) get_option( 'page_on_front' );
+    if ( $front_page_id && get_page_template_slug( $front_page_id ) === 'page-home-nueva.php' ) {
+        return $home_tpl;
+    }
+
     return $template;
 }
 add_filter( 'template_include', 'gls_force_home_template', 99 );

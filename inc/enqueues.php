@@ -143,8 +143,8 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_flexslider');
 /* =========================================================
    GLS – Enqueue page-home.css
    Depende de gls-components para heredar tokens y componentes.
-   Se carga en todas las páginas (comportamiento original) para
-   cubrir el editor de Elementor y las plantillas relacionadas.
+   Frontend normal: solo front page o template page-home-nueva.php.
+   Elementor editor/preview: siempre disponible para edición.
 ========================================================= */
 function gls_enqueue_page_home_css() {
 
@@ -163,7 +163,16 @@ function gls_enqueue_page_home_css() {
 		filemtime($file)
 	);
 }
-add_action('wp_enqueue_scripts', 'gls_enqueue_page_home_css', 20);
+
+// Frontend normal: solo se encola en front page o en el template home.
+function gls_enqueue_page_home_css_frontend() {
+	if (is_front_page() || is_page_template('page-home-nueva.php')) {
+		gls_enqueue_page_home_css();
+	}
+}
+add_action('wp_enqueue_scripts', 'gls_enqueue_page_home_css_frontend', 20);
+
+// Elementor: disponible siempre en editor/preview (cubre cualquier página que use componentes home).
 add_action('elementor/frontend/after_enqueue_styles', 'gls_enqueue_page_home_css', 20);
 add_action('elementor/editor/after_enqueue_styles', 'gls_enqueue_page_home_css', 20);
 add_action('elementor/preview/enqueue_styles', 'gls_enqueue_page_home_css', 20);
