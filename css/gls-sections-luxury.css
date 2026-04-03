@@ -1,0 +1,214 @@
+/* ======================================================
+   GLS SECTIONS – LUXURY
+   Estilos para las secciones "luxury" reutilizables.
+   Archivo: css/gls-sections-luxury.css
+
+   PROPÓSITO:
+   - Estilos del componente .gls-split (2 columnas luxury).
+   - Depende de gls-components (ya cargado antes).
+   - Nunca añadir :root aquí – los tokens van en gls-root.css.
+
+   CARGA CONDICIONAL:
+   - Solo en page-luxury-section-demo.php (y páginas que usen
+     la sección split en el futuro).
+   ====================================================== */
+
+
+/* ===========================================================
+   GLS-SPLIT — Luxury 2-column split section
+   =========================================================== */
+
+.gls-split {
+    padding-top:    var(--space-xl);
+    padding-bottom: var(--space-xl);
+    background-color: #fff;
+}
+
+/* Background variants */
+.gls-split--light {
+    background-color: var(--main-color);
+}
+
+.gls-split--dark {
+    background-color: var(--black-color);
+    color: var(--main-color);
+}
+
+/* Inner layout: 2-column grid */
+.gls-split__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+/* Image on left variant: swap column order */
+.gls-split--img-left .gls-split__content {
+    order: 2;
+}
+
+.gls-split--img-left .gls-split__media {
+    order: 1;
+}
+
+
+/* --- Text column --- */
+
+.gls-split__eyebrow {
+    font-family:    var(--font-body);
+    font-size:      var(--gls-text-xs);
+    font-weight:    600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color:          var(--accent-color);
+    margin-bottom:  var(--space-xxs);
+}
+
+.gls-split--dark .gls-split__eyebrow {
+    color: var(--accent-color);
+}
+
+.gls-split__title {
+    font-family:    var(--font-display);
+    font-size:      var(--gls-text-2xl);
+    font-weight:    400;
+    line-height:    var(--gls-lh-tight);
+    letter-spacing: var(--gls-track-title);
+    color:          var(--black-color);
+    margin-top:     0;
+    margin-bottom:  var(--space-sm);
+}
+
+.gls-split--dark .gls-split__title {
+    color: var(--main-color);
+}
+
+.gls-split__text {
+    font-family:  var(--font-body);
+    font-size:    var(--gls-text-md);
+    line-height:  var(--gls-lh-relaxed);
+    color:        var(--muted-color);
+    margin-bottom: var(--space-md);
+    max-width: 52ch;
+}
+
+.gls-split--dark .gls-split__text {
+    color: rgba(239, 228, 214, 0.80);
+}
+
+/* CTA row */
+.gls-split__cta {
+    display:     flex;
+    flex-wrap:   wrap;
+    align-items: center;
+    gap:         var(--space-xs);
+}
+
+
+/* --- Image column --- */
+
+.gls-split__img-wrap {
+    position:      relative;
+    border-radius: var(--gls-radius-md);
+    overflow:      hidden;
+    box-shadow:    var(--gls-shadow-md);
+
+    /* Subtle reveal animation on load */
+    animation: glsSplitFadeUp 0.6s var(--gls-ease) both;
+}
+
+.gls-split__img {
+    display:    block;
+    width:      100%;
+    height:     100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    transition: transform 0.8s var(--gls-ease);
+}
+
+.gls-split__img-wrap:hover .gls-split__img {
+    transform: scale(1.03);
+}
+
+/* Decorative accent line on image (luxury touch) */
+.gls-split__img-wrap::before {
+    content:  '';
+    position: absolute;
+    inset:    0;
+    border:   1px solid rgba(232, 196, 155, 0.25);
+    border-radius: var(--gls-radius-md);
+    z-index:  1;
+    pointer-events: none;
+}
+
+
+/* ===========================================================
+   Fade-up entrance animation
+   =========================================================== */
+
+@keyframes glsSplitFadeUp {
+    from {
+        opacity:   0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity:   1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gls-split__img-wrap {
+        animation: none;
+    }
+}
+
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+/* Tablet: single column */
+@media (max-width: 900px) {
+
+    .gls-split {
+        padding-top:    var(--space-lg);
+        padding-bottom: var(--space-lg);
+    }
+
+    .gls-split__inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    /* On mobile, always show text first */
+    .gls-split--img-left .gls-split__content {
+        order: 1;
+    }
+
+    .gls-split--img-left .gls-split__media {
+        order: 2;
+    }
+
+    .gls-split__text {
+        max-width: 100%;
+    }
+}
+
+/* Mobile: tighten vertical padding */
+@media (max-width: 600px) {
+
+    .gls-split {
+        padding-top:    var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+
+    .gls-split__title {
+        font-size: var(--gls-text-xl);
+    }
+
+    .gls-split__cta {
+        flex-direction: column;
+        align-items:    flex-start;
+    }
+}

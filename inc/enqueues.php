@@ -225,6 +225,34 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_litepicker_home', 30);
 
 
 /* =====================================================
+   GLS – Enqueue gls-sections-luxury.css
+   Cargado solo cuando se usa el template luxury section demo
+   (y cualquier futuro template que incluya secciones luxury).
+   Depende de gls-components para heredar tokens y componentes.
+===================================================== */
+function gls_enqueue_sections_luxury_css() {
+
+	if (!is_page_template('page-luxury-section-demo.php')) {
+		return;
+	}
+
+	$file = get_stylesheet_directory() . '/css/gls-sections-luxury.css';
+
+	if (!file_exists($file)) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'gls-sections-luxury',
+		get_stylesheet_directory_uri() . '/css/gls-sections-luxury.css',
+		['gls-components'],
+		filemtime($file)
+	);
+}
+add_action('wp_enqueue_scripts', 'gls_enqueue_sections_luxury_css');
+
+
+/* =====================================================
    ENQUEUE ARCHIVE APARTAMENTOS CSS
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
