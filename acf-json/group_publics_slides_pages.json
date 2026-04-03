@@ -1,0 +1,83 @@
+{
+    "key": "group_publics_slides_pages",
+    "title": "GLS \u2013 P\u00fablicos Slides (P\u00e1ginas)",
+    "fields": [
+        {
+            "key": "field_publics_slides_repeater",
+            "label": "Diapositivas de P\u00fablicos",
+            "name": "publics_slides",
+            "type": "repeater",
+            "instructions": "A\u00f1ade una diapositiva por cada segmento de p\u00fablico (ej: Propietarios, Viajeros, Grupos). Cada slide necesita al menos un t\u00edtulo.",
+            "required": 0,
+            "min": 0,
+            "max": 10,
+            "layout": "block",
+            "button_label": "A\u00f1adir diapositiva",
+            "sub_fields": [
+                {
+                    "key": "field_publics_slide_background",
+                    "label": "Imagen de fondo",
+                    "name": "slide_background",
+                    "type": "image",
+                    "instructions": "Imagen a pantalla completa para esta diapositiva. Tama\u00f1o recomendado: 1920\u00d71080 px o superior.",
+                    "required": 0,
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_publics_slide_title",
+                    "label": "T\u00edtulo (H2)",
+                    "name": "slide_title",
+                    "type": "text",
+                    "instructions": "T\u00edtulo principal de la diapositiva. M\u00e1ximo 80 caracteres.",
+                    "required": 0,
+                    "placeholder": "Ej: Para Propietarios",
+                    "maxlength": 80
+                },
+                {
+                    "key": "field_publics_slide_text",
+                    "label": "Texto descriptivo",
+                    "name": "slide_text",
+                    "type": "wysiwyg",
+                    "instructions": "Descripci\u00f3n breve del segmento (2\u20133 frases recomendadas).",
+                    "required": 0,
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_publics_slide_button",
+                    "label": "Bot\u00f3n (enlace)",
+                    "name": "slide_button",
+                    "type": "link",
+                    "instructions": "Enlace opcional dentro de la diapositiva. Deja vac\u00edo para ocultarlo.",
+                    "required": 0,
+                    "return_format": "array"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-luxury-section-demo.php"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "Repeater con diapositivas de segmentos de p\u00fablico (Propietarios, Viajeros, Grupos…). Se muestra en p\u00e1ginas con la plantilla \u201cLuxury Section Demo\u201d. Para a\u00f1adirlo a otra plantilla, agrega su nombre de archivo a las reglas de ubicaci\u00f3n.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1743800100
+}

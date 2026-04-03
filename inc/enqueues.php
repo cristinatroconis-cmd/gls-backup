@@ -166,7 +166,10 @@ function gls_enqueue_page_home_css() {
 
 // Frontend normal: solo se encola en front page o en el template home.
 function gls_enqueue_page_home_css_frontend() {
-	if (is_front_page() || is_page_template('page-home-nueva.php')) {
+	if ( is_front_page()
+		|| is_page_template( 'page-home-nueva.php' )
+		|| is_page_template( 'page-luxury-section-demo.php' )
+	) {
 		gls_enqueue_page_home_css();
 	}
 }
