@@ -1,0 +1,153 @@
+{
+    "key": "group_7a1sn000000001",
+    "title": "Página: Sobre Nosotros (Luxury)",
+    "fields": [
+        {
+            "key": "field_7a1sn0000msg01",
+            "label": "ℹ️ Estás editando /sobre-nosotros/",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "message": "Estos campos controlan la <strong>sección principal</strong> de la página Sobre Nosotros. Rellena los campos y guarda. Si los dejas vacíos se mostrará el contenido de ejemplo.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_7a1sn0000ey001",
+            "label": "Eyebrow (subtítulo pequeño)",
+            "name": "gls_sn_split_eyebrow",
+            "type": "text",
+            "instructions": "Texto pequeño que aparece encima del título. Ej: «Quiénes somos»",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "Quiénes somos",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_7a1sn0000ti001",
+            "label": "Título",
+            "name": "gls_sn_split_titulo",
+            "type": "text",
+            "instructions": "Título principal de la sección.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "Una experiencia única en Granada",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_7a1sn0000tx001",
+            "label": "Texto descriptivo",
+            "name": "gls_sn_split_texto",
+            "type": "textarea",
+            "instructions": "Descripción de la sección. Admite párrafos.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "Descripción sobre el equipo y los valores de GLS...",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_7a1sn0000bp001",
+            "label": "Botón Principal",
+            "name": "gls_sn_split_btn_primary",
+            "type": "link",
+            "instructions": "Botón CTA principal (fondo dorado).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "return_format": "array"
+        },
+        {
+            "key": "field_7a1sn0000bs001",
+            "label": "Botón Secundario",
+            "name": "gls_sn_split_btn_secondary",
+            "type": "link",
+            "instructions": "Botón CTA secundario (outline). Opcional.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "return_format": "array"
+        },
+        {
+            "key": "field_7a1sn0000im001",
+            "label": "Imagen",
+            "name": "gls_sn_split_imagen",
+            "type": "image",
+            "instructions": "Imagen de la sección (recomendado: 800×560px mínimo).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_7a1sn0000bg001",
+            "label": "Fondo de la sección",
+            "name": "gls_sn_split_bg",
+            "type": "select",
+            "instructions": "Color de fondo de la sección.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "choices": {
+                "light":  "Blanco (light)",
+                "accent": "Crema dorado (accent)",
+                "dark":   "Negro luxury (dark)"
+            },
+            "default_value": "accent",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-sobre-nosotros.php"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "sobre-nosotros"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Controla la sección split luxury de la página /sobre-nosotros/",
+    "show_in_rest": 0,
+    "modified": 1743724800
+}

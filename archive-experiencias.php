@@ -1,13 +1,29 @@
 <?php get_header();
-?>
 
-<?php
 /**
  * GLS – Hero específico para páginas de archivo
  */
-get_template_part('template-parts/gls-page-hero');
+get_template_part( 'template-parts/gls-page-hero' );
 
+/**
+ * GLS – Sección introductoria luxury (editable desde ACF Options "Experiencias")
+ */
+get_template_part( 'template-parts/gls-section-split', null, [
+	'prefix'    => 'gls_exp_split',
+	'object_id' => 'option',
+	'layout'    => 'image-right',
+	'fallback'  => [
+		'eyebrow'       => __( 'Descubre Granada', 'identofmk' ),
+		'titulo'        => __( 'Experiencias que recordarás', 'identofmk' ),
+		'texto'         => __( 'Desde rutas gastronómicas hasta visitas culturales únicas, diseñamos experiencias a medida para que tu estancia en Granada sea verdaderamente inolvidable.', 'identofmk' ),
+		'btn_primary'   => null,
+		'btn_secondary' => null,
+		'imagen_url'    => '',
+		'bg'            => 'accent',
+	],
+] );
 ?>
+
 <main>
 	</section>
 	<div id="experiencias-content">

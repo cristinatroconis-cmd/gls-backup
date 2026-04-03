@@ -225,6 +225,44 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_litepicker_home', 30);
 
 
 /* =====================================================
+   ENQUEUE LUXURY SECTIONS CSS
+   Se carga solo en las páginas que usan gls-section-split:
+     - Archive de experiencias
+     - Página con template Propietarios
+     - Página con template Sobre Nosotros
+   Depende de gls-components para heredar tokens.
+===================================================== */
+function gls_enqueue_sections_luxury_css() {
+
+	$is_luxury_page = (
+		is_post_type_archive( 'experiencias' )
+		|| is_page_template( 'page-propietarios.php' )
+		|| is_page_template( 'page-sobre-nosotros.php' )
+		|| is_page( 'propietarios' )
+		|| is_page( 'sobre-nosotros' )
+	);
+
+	if ( ! $is_luxury_page ) {
+		return;
+	}
+
+	$file = get_stylesheet_directory() . '/css/gls-sections-luxury.css';
+
+	if ( ! file_exists( $file ) ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'gls-sections-luxury',
+		get_stylesheet_directory_uri() . '/css/gls-sections-luxury.css',
+		[ 'gls-components' ],
+		filemtime( $file )
+	);
+}
+add_action( 'wp_enqueue_scripts', 'gls_enqueue_sections_luxury_css', 20 );
+
+
+/* =====================================================
    ENQUEUE ARCHIVE APARTAMENTOS CSS
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */

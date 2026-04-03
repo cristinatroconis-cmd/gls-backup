@@ -423,6 +423,27 @@ if (function_exists('acf_add_options_page')) {
     ]);
 }
 
+if (function_exists('acf_add_options_sub_page')) {
+    acf_add_options_sub_page([
+        'page_title'  => 'Experiencias (Página)',
+        'menu_title'  => 'Experiencias (Página)',
+        'menu_slug'   => 'gls-experiencias-options',
+        'parent_slug' => 'opciones-tema',
+        'capability'  => 'edit_posts',
+    ]);
+}
+
+/* =====================================================
+   GLS SEED ACF
+   Autopuebla campos ACF de ejemplo en entorno local/dev.
+   Solo se ejecuta si WP_DEBUG está activo O si se define
+   la constante GLS_SEED_ACF = true en wp-config.php.
+   NO se ejecuta en producción por defecto.
+===================================================== */
+if ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) || ( defined( 'GLS_SEED_ACF' ) && GLS_SEED_ACF ) ) {
+    require_once get_stylesheet_directory() . '/inc/gls-seed-acf.php';
+}
+
 /* =====================================================
    ICNEA – Availability helpers
    ===================================================== */

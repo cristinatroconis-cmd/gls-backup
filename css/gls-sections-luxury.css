@@ -1,0 +1,180 @@
+/* ======================================================
+   GLS SECTIONS LUXURY
+   Template-parts: gls-section-split
+   Tokens heredados de gls-root.css
+   ====================================================== */
+
+/* -------------------------
+   SPLIT SECTION (Texto + Imagen)
+   .gls-split
+   .gls-split--image-right  (default)
+   .gls-split--image-left
+   .gls-split--light | --accent | --dark
+   ------------------------- */
+
+.gls-split {
+    padding: var(--space-xl) 0;
+}
+
+.gls-split__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+/* Layout: imagen a la izquierda */
+.gls-split--image-left .gls-split__content {
+    order: 2;
+}
+.gls-split--image-left .gls-split__media {
+    order: 1;
+}
+
+/* -------------------------
+   Background variants
+   ------------------------- */
+
+.gls-split--light {
+    background-color: #ffffff;
+    color: var(--black-color);
+}
+
+.gls-split--accent {
+    background-color: var(--main-color);
+    color: var(--black-color);
+}
+
+.gls-split--dark {
+    background-color: var(--black-color);
+    color: #ffffff;
+}
+
+/* -------------------------
+   Content
+   ------------------------- */
+
+.gls-split__eyebrow {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--gls-text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-color);
+    margin-bottom: var(--space-xs);
+}
+
+.gls-split__title {
+    font-family: var(--font-display);
+    font-size: var(--gls-text-2xl);
+    line-height: var(--gls-lh-tight);
+    letter-spacing: var(--gls-track-title);
+    margin-bottom: var(--space-sm);
+}
+
+.gls-split--dark .gls-split__title {
+    color: #ffffff;
+}
+
+.gls-split__text {
+    font-family: var(--font-body);
+    font-size: var(--gls-text-md);
+    line-height: var(--gls-lh-relaxed);
+    color: var(--muted-color);
+    margin-bottom: var(--space-md);
+    max-width: 520px;
+}
+
+.gls-split--dark .gls-split__text {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.gls-split__text p:last-child {
+    margin-bottom: 0;
+}
+
+.gls-split__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    align-items: center;
+}
+
+/* -------------------------
+   Media / Image
+   ------------------------- */
+
+.gls-split__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--gls-radius-md);
+}
+
+.gls-split__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-height: 560px;
+    transition: transform var(--gls-duration) var(--gls-ease);
+    border-radius: var(--gls-radius-md);
+}
+
+.gls-split__media:hover .gls-split__img {
+    transform: scale(1.03);
+}
+
+.gls-split__img-placeholder {
+    width: 100%;
+    height: 420px;
+    background: var(--grey-color);
+    border-radius: var(--gls-radius-md);
+}
+
+/* -------------------------
+   Responsive: tablet
+   ------------------------- */
+
+@media (max-width: 1024px) {
+    .gls-split {
+        padding: var(--space-lg) 0;
+    }
+
+    .gls-split__inner {
+        gap: var(--space-md);
+    }
+}
+
+/* -------------------------
+   Responsive: mobile
+   ------------------------- */
+
+@media (max-width: 768px) {
+    .gls-split__inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    /* Móvil: media siempre debajo del contenido */
+    .gls-split--image-left .gls-split__content,
+    .gls-split--image-left .gls-split__media {
+        order: unset;
+    }
+
+    .gls-split__title {
+        font-size: var(--gls-text-xl);
+    }
+
+    .gls-split__img {
+        max-height: 300px;
+    }
+
+    .gls-split__img-placeholder {
+        height: 260px;
+    }
+
+    .gls-split__text {
+        max-width: 100%;
+    }
+}
