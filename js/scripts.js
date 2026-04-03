@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 jQuery(window).on('load', function () {
     if (jQuery('.publics-home-slides').length) {
-        jQuery('.publics-home-slides').slick({
+        jQuery('.publics-home-slides').not('.slick-initialized').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,

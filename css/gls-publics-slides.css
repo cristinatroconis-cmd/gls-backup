@@ -1,0 +1,125 @@
+/* ======================================================
+   GLS SECTIONS – PUBLICS SLIDES CAROUSEL
+   Estilos para la sección .publics-home-slides (slick carousel).
+   Archivo: css/gls-publics-slides.css
+
+   PROPÓSITO:
+   - Estilos exclusivos del componente Publics Slides (slider).
+   - Depende de gls-components (ya cargado antes).
+   - Nunca añadir :root aquí – los tokens van en gls-root.css.
+   - NO incluir estilos de .gls-intro ni de otros componentes.
+
+   CARGA CONDICIONAL:
+   - Solo en page-luxury-section-demo.php (y páginas que usen
+     este slider en el futuro).
+   ====================================================== */
+
+
+/* ----------------------------------------------------------
+   Contenedor del slider
+   ---------------------------------------------------------- */
+
+.publics-home-slides {
+    position: relative;
+}
+
+
+/* ----------------------------------------------------------
+   Cada diapositiva
+   Usamos .publics-home-slides .publics-slide (especificidad 0,2,0)
+   para que flex-end sobreviva al display:block de slick en
+   .slick-initialized .slick-slide (especificidad 0,2,0),
+   ya que este archivo se carga después de slick.css.
+   ---------------------------------------------------------- */
+
+.publics-home-slides .publics-slide {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 6px;
+}
+
+
+/* ----------------------------------------------------------
+   Imagen de fondo + overlay
+   ---------------------------------------------------------- */
+
+.publics-slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.publics-slide-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+
+/* ----------------------------------------------------------
+   Caja interior – se alinea a la derecha gracias a
+   margin-left:auto + margin-right fijo.
+   ---------------------------------------------------------- */
+
+.publics-slide-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #F3EBDD;
+    padding: 20px 20px;
+    width: 520px;
+    min-height: 420px;
+    margin-left: auto;
+    margin-right: 60px;
+    border-radius: 6px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .12);
+}
+
+
+/* ----------------------------------------------------------
+   Tipografía interior
+   ---------------------------------------------------------- */
+
+.gls-home-prop-title {
+    font-size: 52px;
+    line-height: 1.15;
+    text-align: left;
+}
+
+.gls-home-prop-text {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.gls-home-prop-cta {
+    display: inline-block;
+    text-align: left;
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE
+   ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .publics-home-slides .publics-slide {
+        justify-content: center;
+    }
+
+    .publics-slide-inner {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

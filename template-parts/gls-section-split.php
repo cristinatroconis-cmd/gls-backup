@@ -46,7 +46,7 @@ if ( is_array($image) && !empty($image['url']) ) {
     $img_alt = esc_attr($image['alt'] ?? '');
 } else {
     /* Fallback: placeholder image */
-    $img_url = esc_url(get_stylesheet_directory_uri() . '/img/gls-split-placeholder.jpg');
+    $img_url = esc_url(get_stylesheet_directory_uri() . '/img/placeholder.jpg');
     $img_alt = esc_attr__('Granada Luxury Suites', 'gls-backup');
 }
 
