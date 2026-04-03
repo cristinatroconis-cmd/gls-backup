@@ -1,0 +1,169 @@
+/* ======================================================
+   GLS SECTIONS – INTRO EDITORIAL
+   Estilos para la sección .gls-intro (headline + texto, centrada, luxury clean).
+   Archivo: css/gls-sections-intro.css
+
+   PROPÓSITO:
+   - Estilos del componente .gls-intro (editorial centrado).
+   - Depende de gls-components (ya cargado antes).
+   - Nunca añadir :root aquí – los tokens van en gls-root.css.
+
+   CARGA CONDICIONAL:
+   - Solo en page-luxury-section-demo.php (y páginas que usen
+     la sección intro en el futuro).
+   ====================================================== */
+
+
+/* ===========================================================
+   GLS-INTRO — Luxury centered editorial section
+   =========================================================== */
+
+.gls-intro {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    background-color: var(--main-color);
+}
+
+/* Background variants */
+.gls-intro--light {
+    background-color: var(--main-color);
+}
+
+.gls-intro--accent {
+    background-color: var(--accent-color);
+}
+
+.gls-intro--dark {
+    background-color: var(--black-color);
+}
+
+
+/* --- Inner container: centered editorial block --- */
+
+.gls-intro__inner {
+    text-align: center;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Left-align variant */
+.gls-intro--left .gls-intro__inner {
+    text-align: left;
+    margin-left: 0;
+}
+
+
+/* --- Eyebrow --- */
+
+.gls-intro__eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--gls-text-xs);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+}
+
+.gls-intro--dark .gls-intro__eyebrow {
+    color: var(--accent-color);
+}
+
+
+/* --- Title (H2) --- */
+
+.gls-intro__title {
+    font-family: var(--font-display);
+    font-size: var(--gls-text-2xl);
+    font-weight: 400;
+    line-height: var(--gls-lh-tight);
+    letter-spacing: var(--gls-track-title);
+    color: var(--black-color);
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+}
+
+.gls-intro--dark .gls-intro__title {
+    color: var(--main-color);
+}
+
+
+/* --- Divider line (subtle luxury separator) --- */
+
+.gls-intro__divider {
+    width: 48px;
+    height: 1px;
+    background-color: var(--gls-divider-color);
+    margin: 0 auto var(--space-sm);
+}
+
+.gls-intro--left .gls-intro__divider {
+    margin-left: 0;
+}
+
+.gls-intro--dark .gls-intro__divider {
+    background-color: rgba(232, 196, 155, 0.35);
+}
+
+
+/* --- Body text --- */
+
+.gls-intro__text {
+    font-family: var(--font-body);
+    font-size: var(--gls-text-md);
+    line-height: var(--gls-lh-relaxed);
+    color: var(--muted-color);
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gls-intro--left .gls-intro__text {
+    margin-left: 0;
+}
+
+.gls-intro__text p {
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+}
+
+.gls-intro__text p:last-child {
+    margin-bottom: 0;
+}
+
+.gls-intro--dark .gls-intro__text {
+    color: rgba(239, 228, 214, 0.80);
+}
+
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+/* Tablet: reduce vertical padding */
+@media (max-width: 900px) {
+
+    .gls-intro {
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+    }
+}
+
+/* Mobile: tighten further, reduce title size */
+@media (max-width: 600px) {
+
+    .gls-intro {
+        padding-top: var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+
+    .gls-intro__title {
+        font-size: var(--gls-text-xl);
+    }
+
+    .gls-intro__text {
+        max-width: 100%;
+    }
+}
