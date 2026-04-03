@@ -16,3 +16,19 @@ vendor/
 
 sass-cache/
 .cache/
+
+# Local / sandbox artifacts
+app/sql/*.sql
+*.sql
+
+# OS / editor
+.DS_Store
+.vscode/
+# Local / sandbox artifacts
+app/sql/*.sql
+*.sql
+
+# OS / editor
+.DS_Store
+.vscode/
+
