@@ -1,5 +1,44 @@
 # Cambios – Granada Luxury Suites
 
+## 2026-04
+
+### Incidente Git: commit accidental de dump SQL local
+
+#### Qué pasó
+Se añadió accidentalmente el archivo `app/sql/local.sql` (135 568 líneas) a un commit. Al intentar hacer `git push`, el push falló con los errores:
+
+```
+error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+```
+
+El archivo era demasiado grande para el transporte HTTP de GitHub, lo que bloqueó completamente el push de esa rama.
+
+#### Qué se hizo
+1. Se identificó el archivo problemático con `git show --stat HEAD`.
+2. Se revirtió el commit con `git reset HEAD~1` (manteniendo los cambios útiles del mismo commit en staging).
+3. Se añadieron reglas a `.gitignore` para excluir dumps SQL y artefactos locales:
+   - `app/sql/*.sql`
+   - `*.sql`
+4. Se hizo commit limpio (`f802824`) con mensaje `chore: ignore local sql dumps`.
+5. El push se completó sin errores.
+
+#### Impacto
+- Repo más limpio: sin archivos de base de datos locales versionados.
+- Se evita la exposición accidental de datos de la instancia local.
+- Se elimina el bloqueo de push por archivos sobredimensionados.
+- El flujo Git queda restaurado con normalidad.
+
+#### Lecciones aprendidas / Prevención
+- **Nunca versionar dumps SQL**: contienen datos locales, pueden ser grandes y no aportan valor al control de versiones del theme.
+- La **fuente de verdad de la estructura de contenido** es el código del theme + `/acf-json/`, no la base de datos local.
+- Usar `.gitignore` proactivamente para `app/sql/`, `*.sql`, `uploads/` y otros artefactos locales.
+- Antes de hacer `git add .`, revisar qué archivos se están añadiendo con `git status` y `git diff --stat`.
+- Si un push falla con HTTP 400 o "remote end hung up", revisar `git show --stat HEAD` para detectar archivos grandes.
+
+---
+
 ## 2026-03
 
 ### ACF JSON activado en child theme
