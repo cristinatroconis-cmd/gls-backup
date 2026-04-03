@@ -133,9 +133,40 @@ ubicadas en `inc/gls-icnea.php`
 
 ---
 
+## Higiene Git – artefactos locales
+
+### Política de sandbox artifacts
+El repositorio versiona **únicamente el código del theme**. Los artefactos generados en entornos locales o de sandbox quedan explícitamente excluidos:
+
+| Artefacto | Motivo de exclusión |
+|-----------|---------------------|
+| `app/sql/*.sql` | Dumps de base de datos local; pueden ser enormes y contienen datos de instancia |
+| `*.sql` | Cualquier dump SQL en cualquier nivel del árbol |
+| `app/public/wp-content/uploads/` | Media de producción/local; no pertenece al theme |
+| `*.log` | Logs de PHP, servidor o WP; datos efímeros |
+| `node_modules/`, `vendor/` | Dependencias regenerables |
+
+Estas reglas se gestionan en `.gitignore` en la raíz del repo.
+
+### Fuente de verdad
+- **Código del theme** (`/css/`, `/js/`, `/inc/`, templates PHP): Git.
+- **Estructura de contenido ACF**: `/acf-json/` versionado en Git.
+- **Base de datos local**: nunca versionada. Cada entorno gestiona la suya.
+- **Media (uploads)**: gestionada fuera del repo (servidor, servicio de almacenamiento o backup independiente).
+
+### Qué hacer si un push falla por archivo grande
+1. Identificar el archivo: `git show --stat HEAD`
+2. Revertir el commit: `git reset --soft HEAD~1` (mantiene los cambios en staging) o `git reset HEAD~1` (mantiene los cambios en working directory sin staging)
+3. Añadir la regla correspondiente a `.gitignore`
+4. Re-hacer el commit sin el archivo problemático
+5. Verificar con `git status` antes de volver a hacer push
+
+---
+
 ## Decisiones importantes
 - No usar Gutenberg nativo como constructor principal
 - No usar Elementor como base estructural
 - ACF manda
 - No romper tema padre
 - Mejorar sobre base existente, no rehacer sin necesidad
+- No versionar dumps SQL ni artefactos locales (ver sección Higiene Git)

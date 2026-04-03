@@ -54,7 +54,18 @@ git push origin main
   3. `git add / commit / push`
   4. `git pull` solo para traer cambios del remoto
 
-### 6. Home
+### 6. No versionar dumps SQL ni artefactos locales
+- **Nunca** hacer commit de `app/sql/*.sql` ni de ningún archivo `*.sql`
+- Estos archivos son grandes, contienen datos de la instancia local y bloquean el push
+- `.gitignore` ya excluye estos patrones; no eliminar esas reglas
+- Antes de `git add .`, revisar con `git status` y `git diff --stat` qué archivos se están incluyendo
+
+Si un push falla con `HTTP 400` o `remote end hung up`:
+1. Revisar `git show --stat HEAD` para detectar archivos grandes o inesperados
+2. Revertir con `git reset HEAD~1` si el commit incluye artefactos
+3. Añadir la regla al `.gitignore` y volver a hacer commit sin el archivo problemático
+
+### 7. Home
 - `page-home-nueva.php` es la home modular nueva
 - Puede convivir con la home actual mientras se termina
 
