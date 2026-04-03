@@ -70,6 +70,7 @@
     --space-md: 40px;
     --space-lg: 60px;
     --space-xl: 120px;
+    --space-2xl: 160px;
 
     /* --- UI tokens --- */
     --gls-radius-sm: 6px;
@@ -79,6 +80,7 @@
     --gls-shadow-md: 0 18px 40px rgba(0, 0, 0, 0.12);
 
     --gls-border: 1px solid rgba(0, 0, 0, 0.12);
+    --gls-divider-color: rgba(0, 0, 0, 0.15);
 
     /* --- Transiciones --- */
     --gls-ease: cubic-bezier(.2, .8, .2, 1);

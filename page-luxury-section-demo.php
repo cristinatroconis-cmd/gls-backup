@@ -1,8 +1,8 @@
 <?php
 /*
 Template Name: Luxury Section Demo
-Description: Demo page for the luxury split section component (GLS – Phase 1 vertical slice).
-             Shows: Page Hero + Split Section, both editable via ACF.
+Description: Demo page for the luxury section components (GLS – Phase 1 vertical slice).
+             Shows: Page Hero + Intro Editorial + Split Section, all editable via ACF.
 */
 
 get_header();
@@ -14,7 +14,10 @@ get_header();
     /* 1. Page Hero (shared across non-home pages) */
     get_template_part('template-parts/gls-page-hero');
 
-    /* 2. Luxury Split Section */
+    /* 2. Intro Editorial Section */
+    get_template_part('template-parts/gls-section-intro');
+
+    /* 3. Luxury Split Section */
     get_template_part('template-parts/gls-section-split');
     ?>
 

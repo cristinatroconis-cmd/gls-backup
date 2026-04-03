@@ -1,0 +1,89 @@
+{
+    "key": "group_intro_section_01",
+    "title": "GLS \u2013 Intro Section (Editorial)",
+    "fields": [
+        {
+            "key": "field_intro_eyebrow",
+            "label": "Eyebrow (etiqueta peque\u00f1a)",
+            "name": "gls_intro_eyebrow",
+            "type": "text",
+            "instructions": "Texto breve en may\u00fasculas que aparece sobre el t\u00edtulo. Ejemplo: \u201cGranada Luxury Suites\u201d. M\u00e1ximo 60 caracteres.",
+            "required": 0,
+            "placeholder": "Granada Luxury Suites",
+            "maxlength": 60
+        },
+        {
+            "key": "field_intro_title",
+            "label": "T\u00edtulo principal (H2)",
+            "name": "gls_intro_title",
+            "type": "text",
+            "instructions": "T\u00edtulo centrado de la secci\u00f3n introductoria. Se muestra en tipograf\u00eda display (Bell MT). M\u00e1ximo 120 caracteres.",
+            "required": 0,
+            "placeholder": "Where History Meets Luxury",
+            "maxlength": 120
+        },
+        {
+            "key": "field_intro_text",
+            "label": "Texto descriptivo",
+            "name": "gls_intro_text",
+            "type": "textarea",
+            "instructions": "P\u00e1rrafo debajo del t\u00edtulo. Mantén 2\u20133 frases para conservar el ritmo visual. El texto se centra autom\u00e1ticamente.",
+            "required": 0,
+            "rows": 4,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_intro_variant",
+            "label": "Variante de fondo",
+            "name": "gls_intro_variant",
+            "type": "select",
+            "instructions": "Elige el color de fondo de la secci\u00f3n introductoria.",
+            "required": 0,
+            "choices": {
+                "light": "Crema claro (--main-color, por defecto)",
+                "accent": "Dorado (--accent-color)",
+                "dark": "Oscuro / negro"
+            },
+            "default_value": "light",
+            "allow_null": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_intro_align",
+            "label": "Alineaci\u00f3n del texto",
+            "name": "gls_intro_align",
+            "type": "select",
+            "instructions": "Centrado es el estilo editorial por defecto. Izquierda para variantes m\u00e1s lineales.",
+            "required": 0,
+            "choices": {
+                "center": "Centrado (por defecto)",
+                "left": "Izquierda"
+            },
+            "default_value": "center",
+            "allow_null": 0,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-luxury-section-demo.php"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "Campos ACF para la secci\u00f3n intro editorial (headline + texto centrado, luxury clean). Se muestran en p\u00e1ginas con la plantilla \u201cLuxury Section Demo\u201d.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1743800000
+}
