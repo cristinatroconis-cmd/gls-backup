@@ -28,62 +28,62 @@
 :root {
 
     /* --- Paleta de color (no cambia lo de style.css) --- */
-    --main-color:        #EFE4D6;
-    --main-color-hover:  #E8C49B;
+    --main-color: #EFE4D6;
+    --main-color-hover: #E8C49B;
 
-    --accent-color:       #E8C49B;
+    --accent-color: #E8C49B;
     --accent-color-hover: #E29910;
 
-    --black-color:    #333333;
-    --muted-color:    #666666;
-    --light-color:    #F3F3F3;
-    --grey-color:     #F3F3F3;
-    --dark-grey-color:#A29F9F;
+    --black-color: #333333;
+    --muted-color: #666666;
+    --light-color: #F3F3F3;
+    --grey-color: #F3F3F3;
+    --dark-grey-color: #A29F9F;
 
     /* --- Tipografía (familias declaradas; no se pisan las de style.css) --- */
-    --font-display:  "Bell MT", serif;
-    --font-body:     "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    --font-numeric:  "Bebas Neue", var(--font-body);
+    --font-display: "Bell MT", serif;
+    --font-body: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    --font-numeric: "Bebas Neue", var(--font-body);
 
     /* --- Escala tipográfica fluida (inspirada en luxurypropertiesjh.com) ---
          Se usa clamp(mín, preferida, máx) para que la escala sea
          responsive sin media-queries por cada tamaño. */
-    --gls-text-xs:  clamp(13px, 1vw,   14px);
-    --gls-text-sm:  clamp(15px, 1.2vw, 16px);
-    --gls-text-md:  clamp(16px, 1.4vw, 18px);
-    --gls-text-lg:  clamp(20px, 2vw,   22px);
-    --gls-text-xl:  clamp(26px, 3vw,   30px);
+    --gls-text-xs: clamp(13px, 1vw, 14px);
+    --gls-text-sm: clamp(15px, 1.2vw, 16px);
+    --gls-text-md: clamp(16px, 1.4vw, 18px);
+    --gls-text-lg: clamp(20px, 2vw, 22px);
+    --gls-text-xl: clamp(26px, 3vw, 30px);
     --gls-text-2xl: clamp(34px, 3.5vw, 42px);
-    --gls-text-3xl: clamp(38px, 4vw,   56px);
-    --gls-text-hero:clamp(38px, 5vw,   62px);
+    --gls-text-3xl: clamp(38px, 4vw, 56px);
+    --gls-text-hero: clamp(38px, 5vw, 62px);
 
     /* Line-heights y tracking */
-    --gls-lh-tight:    1.08;
-    --gls-lh-normal:   1.5;
-    --gls-lh-relaxed:  1.7;
+    --gls-lh-tight: 1.08;
+    --gls-lh-normal: 1.5;
+    --gls-lh-relaxed: 1.7;
     --gls-track-title: 0.02em;
 
     /* --- Espaciado escalar --- */
     --space-xxs: 8px;
-    --space-xs:  16px;
-    --space-sm:  24px;
-    --space-md:  40px;
-    --space-lg:  60px;
-    --space-xl:  120px;
+    --space-xs: 16px;
+    --space-sm: 24px;
+    --space-md: 40px;
+    --space-lg: 60px;
+    --space-xl: 120px;
 
     /* --- UI tokens --- */
-    --gls-radius-sm:  6px;
-    --gls-radius-md:  10px;
+    --gls-radius-sm: 6px;
+    --gls-radius-md: 10px;
 
-    --gls-shadow-sm:  0 10px 30px rgba(0, 0, 0, 0.10);
-    --gls-shadow-md:  0 18px 40px rgba(0, 0, 0, 0.12);
+    --gls-shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.10);
+    --gls-shadow-md: 0 18px 40px rgba(0, 0, 0, 0.12);
 
-    --gls-border:     1px solid rgba(0, 0, 0, 0.12);
+    --gls-border: 1px solid rgba(0, 0, 0, 0.12);
 
     /* --- Transiciones --- */
-    --gls-ease:          cubic-bezier(.2, .8, .2, 1);
+    --gls-ease: cubic-bezier(.2, .8, .2, 1);
     --gls-duration-fast: 150ms;
-    --gls-duration:      350ms;
+    --gls-duration: 350ms;
 
     /* --- Layout --- */
     --gls-container-max: 1410px;
@@ -94,13 +94,21 @@
    2) LAYOUT UTILITY
    ========================= */
 
+/* Contenedor Padre Seccion Split— Luxury 2-column split section */
+.gls-split {
+    padding-bottom: var(--space-xs);
+    padding-top: var(--space-xs);
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+}
+
+
 /* Contenedor base del sistema GLS (opt-in: úsalo donde quieras) */
 .gls-container {
     max-width: var(--gls-container-max);
-    margin-left:  auto;
-    margin-right: auto;
-    padding-left:  20px;
-    padding-right: 20px;
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
 }
 
 
@@ -114,30 +122,30 @@
 
 body .btn-fix,
 body a.btn-fix {
-    font-size:        18px;
-    font-weight:      400;
+    font-size: 18px;
+    font-weight: 400;
     background-color: var(--accent-color);
-    color:            var(--black-color);
+    color: var(--black-color);
 
-    border:        2px solid var(--accent-color);
+    border: 2px solid var(--accent-color);
     border-radius: var(--gls-radius-sm);
 
-    padding:         14px 22px;
-    text-transform:  uppercase;
-    box-shadow:      none;
+    padding: 14px 22px;
+    text-transform: uppercase;
+    box-shadow: none;
 
     transition:
         background-color var(--gls-duration) var(--gls-ease),
-        color            var(--gls-duration) var(--gls-ease),
-        border-color     var(--gls-duration) var(--gls-ease),
-        transform        var(--gls-duration) var(--gls-ease);
+        color var(--gls-duration) var(--gls-ease),
+        border-color var(--gls-duration) var(--gls-ease),
+        transform var(--gls-duration) var(--gls-ease);
 }
 
 body .btn-fix:hover,
 body a.btn-fix:hover {
     background-color: transparent;
-    color:            var(--accent-color);
-    border-color:     var(--accent-color);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 body .btn-fix:active,
@@ -150,12 +158,12 @@ body a.btn-fix:active {
 body .btn-fix-outline,
 body a.btn-fix-outline {
     background-color: transparent;
-    color:            var(--accent-color);
-    font-size:        18px;
-    font-weight:      400;
-    border:           none;
-    padding:          14px 22px;
-    text-transform:   uppercase;
+    color: var(--accent-color);
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 14px 22px;
+    text-transform: uppercase;
 
     transition:
         color var(--gls-duration) var(--gls-ease);
@@ -164,8 +172,8 @@ body a.btn-fix-outline {
 body .btn-fix-outline:hover,
 body a.btn-fix-outline:hover {
     background-color: transparent;
-    color:            var(--accent-color-hover);
-    border:           none;
+    color: var(--accent-color-hover);
+    border: none;
 }
 
 
@@ -175,18 +183,19 @@ body a.btn-fix-outline:hover {
 
 /* Focus visible: sin ensuciar la experiencia con ratón */
 :focus-visible {
-    outline:        2px solid rgba(226, 153, 16, 0.75);
+    outline: 2px solid rgba(226, 153, 16, 0.75);
     outline-offset: 2px;
 }
 
 /* Reducción de movimiento para usuarios sensibles */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
-        animation-duration:       1ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:      1ms !important;
-        scroll-behavior:          auto !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+        scroll-behavior: auto !important;
     }
 }
