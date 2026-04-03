@@ -1,7 +1,11 @@
 <?php
 /**
  * GLS – Enqueues
- * Centraliza la carga de estilos y scripts del tema hijo
+ * Centraliza la carga de estilos y scripts del tema hijo.
+ *
+ * Orden de carga:
+ *   style.css (base) → gls-root.css → gls-components.css
+ *   → slick → open-sans → page-home.css → archive-apartamentos.css
  */
 
 if (!defined('ABSPATH')) {
@@ -10,18 +14,11 @@ if (!defined('ABSPATH')) {
 
 /* =========================================================
    ENQUEUE STYLES
+   Orden: style → gls-root → gls-components → vendor (slick) → fuentes
 ========================================================= */
 function gls_styles() {
 
-	wp_enqueue_style(
-		'gls-components',
-		get_stylesheet_directory_uri() . '/css/gls-components.css',
-		[],
-		file_exists(get_stylesheet_directory() . '/css/gls-components.css')
-			? filemtime(get_stylesheet_directory() . '/css/gls-components.css')
-			: null
-	);
-
+	/* 1) Hoja base del child theme (style.css) */
 	wp_enqueue_style(
 		'style',
 		get_stylesheet_uri(),
@@ -31,6 +28,27 @@ function gls_styles() {
 			: null
 	);
 
+	/* 2) Root: tokens, tipografía fluida, botones globales — depende de style */
+	wp_enqueue_style(
+		'gls-root',
+		get_stylesheet_directory_uri() . '/css/gls-root.css',
+		['style'],
+		file_exists(get_stylesheet_directory() . '/css/gls-root.css')
+			? filemtime(get_stylesheet_directory() . '/css/gls-root.css')
+			: null
+	);
+
+	/* 3) Componentes globales (page-hero, cards…) — depende de gls-root */
+	wp_enqueue_style(
+		'gls-components',
+		get_stylesheet_directory_uri() . '/css/gls-components.css',
+		['gls-root'],
+		file_exists(get_stylesheet_directory() . '/css/gls-components.css')
+			? filemtime(get_stylesheet_directory() . '/css/gls-components.css')
+			: null
+	);
+
+	/* 4) Vendor: Slick Carousel */
 	wp_enqueue_style(
 		'slick_theme_style',
 		get_stylesheet_directory_uri() . '/css/slick-theme.css',
@@ -49,6 +67,7 @@ function gls_styles() {
 			: null
 	);
 
+	/* 5) Fuentes web */
 	wp_enqueue_style(
 		'open-sans',
 		'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i',
@@ -123,6 +142,9 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_flexslider');
 
 /* =========================================================
    GLS – Enqueue page-home.css
+   Depende de gls-components para heredar tokens y componentes.
+   Se carga en todas las páginas (comportamiento original) para
+   cubrir el editor de Elementor y las plantillas relacionadas.
 ========================================================= */
 function gls_enqueue_page_home_css() {
 
@@ -137,7 +159,7 @@ function gls_enqueue_page_home_css() {
 	wp_enqueue_style(
 		'gls-page-home',
 		$url,
-		['style'],
+		['gls-components'],
 		filemtime($file)
 	);
 }
@@ -148,11 +170,14 @@ add_action('elementor/preview/enqueue_styles', 'gls_enqueue_page_home_css', 20);
 
 
 /* ======================================================
-   LITEPICKER – page-home-nueva.php
+   LITEPICKER – page-home-nueva.php / front page
+   Se activa cuando el template está asignado manualmente
+   en WP Admin O cuando es la front page (template forzado
+   programáticamente por gls_force_home_template).
 ====================================================== */
 function gls_enqueue_litepicker_home() {
 
-	if (!is_page_template('page-home-nueva.php')) {
+	if (!is_front_page() && !is_page_template('page-home-nueva.php')) {
 		return;
 	}
 
@@ -192,6 +217,7 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_litepicker_home', 30);
 
 /* =====================================================
    ENQUEUE ARCHIVE APARTAMENTOS CSS
+   Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
 function gls_enqueue_archive_apartamentos_css() {
 
@@ -208,7 +234,7 @@ function gls_enqueue_archive_apartamentos_css() {
 	wp_enqueue_style(
 		'gls-archive-apartamentos',
 		get_stylesheet_directory_uri() . '/css/archive-apartamentos.css',
-		[],
+		['gls-components'],
 		filemtime($file)
 	);
 }

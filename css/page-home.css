@@ -1,105 +1,14 @@
 /* ======================================================
    PAGE: HOME
    Granada Luxury Suites
-   Limpieza jerárquica profesional
-   Fecha: 25/02/2026
+   -------------------------------------------------------
+   QUÉ CONTIENE ESTE ARCHIVO:
+   - Estilos específicos de la home (hero, buscador, secciones).
+   - NO contiene tokens ni variables (:root → gls-root.css).
+   - NO contiene botones globales (btn-fix → gls-root.css).
+   - Los componentes reutilizables (page hero, cards) están en
+     gls-components.css.
    ====================================================== */
-
-
-/* ======================================================
-   VARIABLES
-   ====================================================== */
-
-:root{
-    --main-color : #EFE4D6;
-    --main-color-hover : #E8C49B;
-    --accent-color: #E8C49B;
-    --accent-color-hover: #E29910;
-
-    --black-color: #333333;
-    --light-color: #F3F3F3;
-    --grey-color: #F3F3F3; 
-    --dark-grey-color: #A29F9F;
-
-    --space-xxs: 8px;
-    --space-xs: 16px;
-    --space-sm: 24px;
-    --space-md: 40px;
-    --space-lg: 60px;
-    --space-xl: 120px;
-}
-
-/* ======================================================
-   SISTEMA GLOBAL DE BOTONES – GLS
-   Fecha: 25/02/2026
-   ====================================================== */
-
-/* ==============================
-   BTN-FIX (PRIMARIO)
-============================== */
-
-body .btn-fix,
-body a.btn-fix {
-    font-size: 18px;
-	font-weight: 400px;
-    background-color: #E8C49B;
-    color: #333333;
-
-    border: 2px solid #E8C49B;
-    border-radius: 6px;
-
-    padding: 14px 22px;
-
-    text-transform: uppercase;
-
-    box-shadow: none;
-
-    transition:
-        background-color .4s ease,
-        color .4s ease,
-        border-color .4s ease;
-}
-
-/* HOVER */
-
-body .btn-fix:hover,
-body a.btn-fix:hover {
-
-    background-color: transparent;
-    color: #E8C49B;
-    border-color: #E8C49B;
-}
-
-
-/* ==============================
-   BTN-FIX-OUTLINE (SECUNDARIO)
-============================== */
-
-body .btn-fix-outline,
-body a.btn-fix-outline {
-
-    background-color: transparent;
-    color: #E8C49B;
-    font-size: 18px;
-	font-weight: 400px;
-    border: none;
-
-    padding: 14px 22px;
-
-    text-transform: uppercase;
-
-    transition:
-        background-color .4s ease,
-        color .4s ease,
-        border-color .4s ease;
-}
-
-body .btn-fix-outline:hover {
-
-    background-color: transparent;
-    color: #e29910;
-    border: none;
-}
 
 /* ======================================================
    FIX HEADER
