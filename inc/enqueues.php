@@ -310,6 +310,40 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_publics_slides_css');
 
 
 /* =====================================================
+   GLS – Enqueue gls-section-lead-contact.css
+   Estilos de la sección Lead/Contact (2 columnas: formulario + media).
+   Cargado solo en la página con slug "propietarios" o con el template
+   page-propietarios.php asignado explícitamente.
+   Depende de gls-components para heredar tokens y componentes.
+===================================================== */
+function gls_enqueue_lead_contact_css() {
+
+	if ( !is_page('propietarios') && !is_page_template('page-propietarios.php') ) {
+		return;
+	}
+
+	$file = get_stylesheet_directory() . '/css/gls-section-lead-contact.css';
+
+	if ( !file_exists($file) ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'gls-section-lead-contact',
+		get_stylesheet_directory_uri() . '/css/gls-section-lead-contact.css',
+		['gls-components'],
+		filemtime($file)
+	);
+}
+add_action('wp_enqueue_scripts', 'gls_enqueue_lead_contact_css', 20);
+
+// Elementor: disponible en editor/preview para cualquier página que use la sección.
+add_action('elementor/frontend/after_enqueue_styles', 'gls_enqueue_lead_contact_css', 20);
+add_action('elementor/editor/after_enqueue_styles',   'gls_enqueue_lead_contact_css', 20);
+add_action('elementor/preview/enqueue_styles',        'gls_enqueue_lead_contact_css', 20);
+
+
+/* =====================================================
    ENQUEUE ARCHIVE APARTAMENTOS CSS
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */

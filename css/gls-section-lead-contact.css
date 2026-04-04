@@ -1,0 +1,222 @@
+/* ======================================================
+   GLS – Section Lead / Contact
+   Archivo: css/gls-section-lead-contact.css
+
+   PROPÓSITO:
+   - Estilos del componente .gls-lead-contact (2 columnas: form + media).
+   - Depende de gls-components (ya cargado antes).
+   - Nunca añadir :root aquí – los tokens van en gls-root.css.
+
+   CARGA CONDICIONAL:
+   - Solo en page-propietarios.php / is_page('propietarios').
+   ====================================================== */
+
+
+/* ===========================================================
+   GLS-LEAD-CONTACT — 2-column: form (left) + media (right)
+   =========================================================== */
+
+.gls-lead-contact {
+    background-color: #fff;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+/* Background variants */
+.gls-lead-contact--light {
+    background-color: var(--main-color);
+}
+
+.gls-lead-contact--accent {
+    background-color: var(--accent-color);
+}
+
+.gls-lead-contact--dark {
+    background-color: var(--black-color);
+    color: var(--main-color);
+}
+
+/* Inner grid: 2 equal columns */
+.gls-lead-contact__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+
+/* --- Left: content column --- */
+
+.gls-lead-contact__title {
+    font-family: var(--font-display);
+    font-size: var(--gls-text-2xl);
+    font-weight: 400;
+    line-height: var(--gls-lh-tight);
+    letter-spacing: var(--gls-track-title);
+    color: var(--black-color);
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+}
+
+.gls-lead-contact--dark .gls-lead-contact__title {
+    color: var(--main-color);
+}
+
+.gls-lead-contact__text {
+    font-family: var(--font-body);
+    font-size: var(--gls-text-md);
+    line-height: var(--gls-lh-relaxed);
+    color: var(--muted-color);
+    margin-bottom: var(--space-md);
+}
+
+.gls-lead-contact__text p {
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+}
+
+.gls-lead-contact--dark .gls-lead-contact__text {
+    color: rgba(239, 228, 214, 0.80);
+}
+
+/* Form area */
+.gls-lead-contact__form {
+    margin-top: var(--space-sm);
+}
+
+/* Placeholder state (no shortcode set) */
+.gls-lead-contact__form--placeholder {
+    border: var(--gls-border);
+    border-radius: var(--gls-radius-md);
+    padding: var(--space-sm);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.gls-lead-contact__form-note {
+    font-family: var(--font-body);
+    font-size: var(--gls-text-sm);
+    color: var(--dark-grey-color);
+    margin: 0;
+    font-style: italic;
+}
+
+/* Gravity Forms integration: remove default GF wrapper padding */
+.gls-lead-contact__form .gform_wrapper {
+    margin: 0;
+}
+
+
+/* --- Right: media column --- */
+
+.gls-lead-contact__media-wrap {
+    position: relative;
+    border-radius: var(--gls-radius-md);
+    overflow: hidden;
+    box-shadow: var(--gls-shadow-md);
+
+    /* Subtle entrance animation */
+    animation: glsLeadContactFadeUp 0.6s var(--gls-ease) both;
+}
+
+/* Decorative accent border (luxury touch) */
+.gls-lead-contact__media-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(232, 196, 155, 0.25);
+    border-radius: var(--gls-radius-md);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Video: fill container, cover behavior */
+.gls-lead-contact__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+/* Image: fill container */
+.gls-lead-contact__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    transition: transform 0.8s var(--gls-ease);
+}
+
+.gls-lead-contact__media-wrap:hover .gls-lead-contact__img {
+    transform: scale(1.03);
+}
+
+/* Poster image: hidden when video is present (video takes priority) */
+.gls-lead-contact__img--poster {
+    display: none;
+}
+
+
+/* ===========================================================
+   Fade-up entrance animation
+   =========================================================== */
+
+@keyframes glsLeadContactFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gls-lead-contact__media-wrap {
+        animation: none;
+    }
+}
+
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+/* Tablet: single column */
+@media (max-width: 900px) {
+
+    .gls-lead-contact {
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+    }
+
+    .gls-lead-contact__inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    /* Content always on top on mobile */
+    .gls-lead-contact__content {
+        order: 1;
+    }
+
+    .gls-lead-contact__media {
+        order: 2;
+    }
+}
+
+/* Mobile: tighten vertical padding */
+@media (max-width: 600px) {
+
+    .gls-lead-contact {
+        padding-top: var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+
+    .gls-lead-contact__title {
+        font-size: var(--gls-text-xl);
+    }
+}

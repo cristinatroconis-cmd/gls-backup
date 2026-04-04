@@ -1,0 +1,120 @@
+{
+    "key": "group_gls_lead_contact_01",
+    "title": "GLS \u2013 Lead\/Contact Section (Propietarios)",
+    "fields": [
+        {
+            "key": "field_glslc_title",
+            "label": "T\u00edtulo principal (H2)",
+            "name": "gls_contact_title",
+            "type": "text",
+            "instructions": "T\u00edtulo de la secci\u00f3n de contacto\/captaci\u00f3n. Se muestra en tipograf\u00eda display (Bell MT). M\u00e1ximo 120 caracteres.",
+            "required": 0,
+            "placeholder": "Conf\u00eda tu apartamento a los expertos",
+            "maxlength": 120
+        },
+        {
+            "key": "field_glslc_text",
+            "label": "Texto descriptivo (rich text)",
+            "name": "gls_contact_text",
+            "type": "wysiwyg",
+            "instructions": "Texto introductorio debajo del t\u00edtulo. Usa formato rico (negrita, cursiva, listas) si lo necesitas.",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_glslc_form_shortcode",
+            "label": "Shortcode del formulario (Gravity Forms)",
+            "name": "gls_contact_form_shortcode",
+            "type": "text",
+            "instructions": "Pega aqu\u00ed el shortcode de Gravity Forms. Ejemplo: [gravityforms id=\"1\" title=\"false\" description=\"false\" ajax=\"true\"]. Si se deja en blanco se muestra un mensaje de marcador de posici\u00f3n.",
+            "required": 0,
+            "placeholder": "[gravityforms id=\"1\" title=\"false\" description=\"false\" ajax=\"true\"]"
+        },
+        {
+            "key": "field_glslc_media_type",
+            "label": "Tipo de media (columna derecha)",
+            "name": "gls_contact_media_type",
+            "type": "select",
+            "instructions": "Elige si la columna derecha muestra un v\u00eddeo (mp4) o una imagen fija.",
+            "required": 0,
+            "choices": {
+                "video": "V\u00eddeo (mp4, preferido)",
+                "image": "Imagen fija"
+            },
+            "default_value": "image",
+            "allow_null": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_glslc_video_mp4",
+            "label": "V\u00eddeo (mp4)",
+            "name": "gls_contact_video_mp4",
+            "type": "file",
+            "instructions": "Sube o selecciona un archivo mp4 para el fondo de la columna derecha. Solo se usa cuando el Tipo de media es \u201cV\u00eddeo\u201d.",
+            "required": 0,
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "mp4,m4v",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_glslc_media_type",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_glslc_image",
+            "label": "Imagen",
+            "name": "gls_contact_image",
+            "type": "image",
+            "instructions": "Imagen de fondo de la columna derecha. Se usa cuando el Tipo de media es \u201cImagen\u201d, o como fallback del v\u00eddeo.",
+            "required": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_glslc_bg_variant",
+            "label": "Variante de fondo de la secci\u00f3n",
+            "name": "gls_contact_bg_variant",
+            "type": "select",
+            "instructions": "Elige el color de fondo de toda la secci\u00f3n.",
+            "required": 0,
+            "choices": {
+                "": "Blanco (por defecto)",
+                "light": "Crema claro (--main-color)",
+                "accent": "Dorado (--accent-color)",
+                "dark": "Oscuro \/ negro"
+            },
+            "default_value": "",
+            "allow_null": 1,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-propietarios.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Campos ACF para la secci\u00f3n Lead\/Contact de la p\u00e1gina Propietarios. Controla t\u00edtulo, texto, shortcode de formulario y media (v\u00eddeo o imagen).",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1743724800
+}
