@@ -2,42 +2,44 @@
    GLS PAGE HERO
 ============================== */
 
-.gls-page-hero{
+.gls-page-hero {
     position: relative;
-	max-height: 66vh;
+    min-height: 400px;
+    max-height: 66vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 180px 60px;
+    padding: inherit;
     display: flex;
     align-items: center;
     color: #ffffff;
 }
 
-.gls-page-hero__overlay{
+.gls-page-hero__overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
 }
 
-.gls-page-hero__inner{
+.gls-page-hero__inner {
     position: relative;
     z-index: 2;
 }
 
-.gls-page-hero__content{
+.gls-page-hero__content {
     max-width: 800px;
 }
 
-.gls-page-hero__title{
+.gls-page-hero__title {
     font-family: 'Bell MT', serif;
+    justify-self: center;
     font-size: 56px;
     line-height: 1.1;
     text-transform: uppercase;
     margin-bottom: 15px;
 }
 
-.gls-page-hero__subtitle{
+.gls-page-hero__subtitle {
     font-size: 18px;
     line-height: 1.6;
     opacity: 0.95;
@@ -45,26 +47,29 @@
 
 /* Responsive */
 
-@media (max-width: 992px){
-    .gls-page-hero{
-        padding: 140px 0 90px;
+@media (max-width: 992px) {
+    .gls-page-hero {
+        padding: 100px;
+        ;
     }
 
-    .gls-page-hero__title{
+    .gls-page-hero__title {
         font-size: 38px;
+        justify-self: center;
+
     }
 }
 
-@media (max-width: 576px){
-    .gls-page-hero{
+@media (max-width: 576px) {
+    .gls-page-hero {
         padding: 120px 20px 70px;
     }
 
-    .gls-page-hero__title{
+    .gls-page-hero__title {
         font-size: 28px;
     }
 
-    .gls-page-hero__subtitle{
+    .gls-page-hero__subtitle {
         font-size: 15px;
     }
 }
