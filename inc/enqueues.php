@@ -310,6 +310,34 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_publics_slides_css');
 
 
 /* =====================================================
+   GLS – Enqueue gls-section-stack-cta.css
+   Estilos de la sección Stack CTA (título H2 + 3 botones secundarios).
+   Cargado solo cuando se usa el template luxury section demo.
+   Depende de gls-components para heredar tokens y componentes.
+===================================================== */
+function gls_enqueue_section_stack_cta_css() {
+
+	if ( !is_page_template('page-luxury-section-demo.php') ) {
+		return;
+	}
+
+	$file = get_stylesheet_directory() . '/css/gls-section-stack-cta.css';
+
+	if ( !file_exists($file) ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'gls-section-stack-cta',
+		get_stylesheet_directory_uri() . '/css/gls-section-stack-cta.css',
+		['gls-components'],
+		filemtime($file)
+	);
+}
+add_action('wp_enqueue_scripts', 'gls_enqueue_section_stack_cta_css');
+
+
+/* =====================================================
    GLS – Enqueue gls-section-lead-contact.css
    Estilos de la sección Lead/Contact (2 columnas: formulario + media).
    Cargado solo en la página con slug "propietarios" o con el template
