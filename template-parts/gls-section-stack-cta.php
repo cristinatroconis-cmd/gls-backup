@@ -42,14 +42,16 @@ $buttons = [ $cta_1, $cta_2, $cta_3 ];
  *
  * @param array $link  ACF link array with url / title / target.
  */
-function gls_stack_cta_button( array $link ) {
-	$target = ! empty( $link['target'] ) ? ' target="' . esc_attr( $link['target'] ) . '" rel="noopener"' : '';
-	printf(
-		'<a href="%s" class="btn-fix-outline"%s>%s</a>',
-		esc_url( $link['url'] ),
-		$target,
-		esc_html( $link['title'] )
-	);
+if ( ! function_exists( 'gls_stack_cta_button' ) ) {
+	function gls_stack_cta_button( array $link ) {
+		$target = ! empty( $link['target'] ) ? ' target="' . esc_attr( $link['target'] ) . '" rel="noopener"' : '';
+		printf(
+			'<a href="%s" class="btn-fix-outline"%s>%s</a>',
+			esc_url( $link['url'] ),
+			$target,
+			esc_html( $link['title'] )
+		);
+	}
 }
 ?>
 <section class="gls-stack-cta">
