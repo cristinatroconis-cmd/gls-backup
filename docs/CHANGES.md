@@ -2,6 +2,39 @@
 
 ## 2026-04
 
+### 2026-04-05 — Sección Stack CTA + reglas de arquitectura CSS/ACF *(local, sin PR abierto)*
+
+#### Nueva sección: Stack CTA
+
+Se implementa la sección `gls-section-stack-cta`: cabecera horizontal con H2 a la izquierda y 3 botones CTA secundarios a la derecha.
+
+**Archivos nuevos/modificados:**
+- `template-parts/gls-section-stack-cta.php` — template part, render con ACF + fallbacks
+- `css/gls-section-stack-cta.css` — estilos propios de la sección (responsive)
+- `acf-json/group_gls_stack_cta01.json` — Field Group versionado
+- `inc/enqueues.php` — función `gls_enqueue_section_stack_cta_css()` (enqueue condicional)
+- `page-luxury-section-demo.php` — se añade la sección al template de demo (posición 5)
+
+**Decisiones:**
+- Tres CTAs (`gls_stack_cta_1/2/3`) tipo ACF Link con etiquetas "turístico", "empresas", "propietarios".
+- Si el campo está vacío, fallback a `href="#"` para que la sección no quede rota en editor.
+- Field Group adjunto por **Page Template** (`page-luxury-section-demo.php`), no globalmente.
+- CSS cargado únicamente cuando el template activo es `page-luxury-section-demo.php` o `page-home-nueva.php`.
+- Botones usan `.btn-fix-outline` (token global de `gls-root.css`); no se duplican estilos.
+
+**Estado:** Cambios locales. Sin PR abierto. Próximo paso: validar en demo page y hacer commit.
+
+---
+
+#### Reglas reforzadas de arquitectura
+
+- **CSS siempre en `/css/`**, nunca en `style.css`.
+- **Sin filtraciones de CSS**: `page-home.css` es exclusivo de Home; cada componente reutilizable tiene su propio CSS y su propio enqueue condicional.
+- **ACF JSON es fuente de verdad**: versionar `/acf-json/` en cada cambio de campo, sin excepción.
+- **Field Groups por Page Template**, no globales, para evitar campos irrelevantes en el editor.
+
+---
+
 ### Incidente Git: commit accidental de dump SQL local
 
 #### Qué pasó
