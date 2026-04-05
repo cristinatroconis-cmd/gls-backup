@@ -1,0 +1,113 @@
+/* ======================================================
+   GLS SECTIONS – STACK CTA
+   Estilos para la sección .gls-stack-cta:
+   título H2 a la izquierda, grupo de 3 botones CTA secundarios a la derecha.
+
+   PROPÓSITO:
+   - Layout horizontal tipo "stack header" con CTA group.
+   - Depende de gls-components (cargado antes).
+   - Nunca añadir :root aquí — los tokens van en gls-root.css.
+
+   CARGA CONDICIONAL:
+   - Solo en page-luxury-section-demo.php (y futuras páginas que
+     incluyan esta sección).
+   ====================================================== */
+
+
+/* ===========================================================
+   .gls-stack-cta — Sección completa
+   =========================================================== */
+
+.gls-stack-cta {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    background-color: var(--main-color);
+}
+
+
+/* ===========================================================
+   .gls-stack-cta__inner — Contenedor flex: título izq, CTAs dcha
+   =========================================================== */
+
+.gls-stack-cta__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+}
+
+
+/* ===========================================================
+   .gls-stack-cta__title — H2
+   =========================================================== */
+
+.gls-stack-cta__title {
+    font-family: var(--font-display);
+    font-size: var(--gls-text-2xl);
+    font-weight: 400;
+    line-height: var(--gls-lh-tight);
+    letter-spacing: var(--gls-track-title);
+    color: var(--black-color);
+    margin: 0;
+    max-width: 36ch;
+}
+
+
+/* ===========================================================
+   .gls-stack-cta__cta-group — Fila de botones secundarios
+   =========================================================== */
+
+.gls-stack-cta__cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    align-items: center;
+}
+
+/* Los tres botones usan el estilo secundario existente (.btn-fix-outline) */
+.gls-stack-cta__cta-group .btn-fix-outline {
+    white-space: nowrap;
+}
+
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+/* Tablet: reduce padding, allow wrap */
+@media (max-width: 900px) {
+
+    .gls-stack-cta {
+        padding-top: var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+
+    .gls-stack-cta__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gls-stack-cta__title {
+        max-width: 100%;
+    }
+}
+
+/* Mobile: tighter padding, stack buttons */
+@media (max-width: 600px) {
+
+    .gls-stack-cta {
+        padding-top: var(--space-sm);
+        padding-bottom: var(--space-sm);
+    }
+
+    .gls-stack-cta__title {
+        font-size: var(--gls-text-xl);
+    }
+
+    .gls-stack-cta__cta-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xxs);
+    }
+}
