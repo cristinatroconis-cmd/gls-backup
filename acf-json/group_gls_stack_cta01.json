@@ -1,43 +1,73 @@
 {
     "key": "group_gls_stack_cta01",
-    "title": "GLS \u2013 Stack CTA Section (Luxury Demo)",
+    "title": "GLS – Stack CTA Section (Luxury Demo)",
     "fields": [
         {
             "key": "field_gls_stack_title",
-            "label": "T\u00edtulo de la secci\u00f3n (H2)",
+            "label": "Título de la sección (H2)",
             "name": "gls_stack_title",
+            "aria-label": "",
             "type": "textarea",
-            "instructions": "T\u00edtulo principal de la secci\u00f3n. Usa Intro + Salto de l\u00ednea para dividir en varias l\u00edneas.",
+            "instructions": "Título principal de la sección. Usa Intro + Salto de línea para dividir en varias líneas.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placeholder": "Descubre Granada Luxury Suites",
             "rows": 3,
-            "new_lines": "br"
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": ""
         },
         {
             "key": "field_gls_stack_cta1",
-            "label": "Bot\u00f3n CTA 1",
+            "label": "Botón CTA 1",
             "name": "gls_stack_cta_1",
+            "aria-label": "",
             "type": "link",
-            "instructions": "Primer bot\u00f3n secundario. Deja vac\u00edo para usar el texto de fallback \u201ctur\u00edstico\u201d.",
+            "instructions": "Primer botón secundario. Deja vacío para usar el texto de fallback “turístico”.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array"
         },
         {
             "key": "field_gls_stack_cta2",
-            "label": "Bot\u00f3n CTA 2",
+            "label": "Botón CTA 2",
             "name": "gls_stack_cta_2",
+            "aria-label": "",
             "type": "link",
-            "instructions": "Segundo bot\u00f3n secundario. Deja vac\u00edo para usar el texto de fallback \u201cempresas\u201d.",
+            "instructions": "Segundo botón secundario. Deja vacío para usar el texto de fallback “empresas”.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array"
         },
         {
             "key": "field_gls_stack_cta3",
-            "label": "Bot\u00f3n CTA 3",
+            "label": "Botón CTA 3",
             "name": "gls_stack_cta_3",
+            "aria-label": "",
             "type": "link",
-            "instructions": "Tercer bot\u00f3n secundario. Deja vac\u00edo para usar el texto de fallback \u201cpropietarios\u201d.",
+            "instructions": "Tercer botón secundario. Deja vacío para usar el texto de fallback “propietarios”.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array"
         }
     ],
@@ -47,6 +77,13 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "page-luxury-section-demo.php"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "6443"
             }
         ]
     ],
@@ -59,8 +96,9 @@
         "the_content"
     ],
     "active": true,
-    "description": "Campos ACF para la secci\u00f3n Stack CTA (t\u00edtulo H2 izquierda + 3 botones secundarios derecha). Solo se muestra en p\u00e1ginas con la plantilla \u201cLuxury Section Demo\u201d.",
+    "description": "Campos ACF para la sección Stack CTA (título H2 izquierda + 3 botones secundarios derecha). Solo se muestra en páginas con la plantilla “Luxury Section Demo”.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1743897428
+    "acfml_field_group_mode": "advanced",
+    "modified": 1775428095
 }

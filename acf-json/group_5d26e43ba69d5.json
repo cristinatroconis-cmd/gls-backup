@@ -1,7 +1,99 @@
 {
     "key": "group_5d26e43ba69d5",
     "title": "Contenido",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_5d26e7f4e1954",
+            "label": "Repeater contenido",
+            "name": "repeater_contenido",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Agregar Fila",
+            "sub_fields": [
+                {
+                    "key": "field_5d26e813e1955",
+                    "label": "Imagen",
+                    "name": "imagen_bloque",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_5d26e7f4e1954"
+                },
+                {
+                    "key": "field_5d26e820e1956",
+                    "label": "Título de bloque",
+                    "name": "titulo_bloque",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_5d26e7f4e1954"
+                },
+                {
+                    "key": "field_5d26e834e1957",
+                    "label": "Texto de bloque",
+                    "name": "texto_bloque",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "parent_repeater": "field_5d26e7f4e1954"
+                }
+            ],
+            "rows_per_page": 20
+        }
+    ],
     "location": [
         [
             {
@@ -11,7 +103,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 11,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -19,9 +111,9 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
-    "modified": 1627278555
+    "modified": 1775430328
 }

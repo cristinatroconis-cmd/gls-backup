@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GLS – Enqueues
  * Centraliza la carga de estilos y scripts del tema hijo.
@@ -16,7 +17,8 @@ if (!defined('ABSPATH')) {
    ENQUEUE STYLES
    Orden: style → gls-root → gls-components → vendor (slick) → fuentes
 ========================================================= */
-function gls_styles() {
+function gls_styles()
+{
 
 	/* 1) Hoja base del child theme (style.css) */
 	wp_enqueue_style(
@@ -81,7 +83,8 @@ add_action('wp_enqueue_scripts', 'gls_styles');
 /* =========================================================
    ENQUEUE SCRIPTS
 ========================================================= */
-function gls_scripts() {
+function gls_scripts()
+{
 
 	wp_enqueue_script('jquery');
 
@@ -121,7 +124,8 @@ add_action('wp_enqueue_scripts', 'gls_scripts');
 /* =========================================================
    FLEXSLIDER (APARTAMENTOS)
 ========================================================= */
-function gls_enqueue_flexslider() {
+function gls_enqueue_flexslider()
+{
 	/*
 	wp_enqueue_style(
 		'flexslider-css',
@@ -146,7 +150,8 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_flexslider');
    Frontend normal: solo front page o template page-home-nueva.php.
    Elementor editor/preview: siempre disponible para edición.
 ========================================================= */
-function gls_enqueue_page_home_css() {
+function gls_enqueue_page_home_css()
+{
 
 	$rel_path = '/css/page-home.css';
 	$file     = get_stylesheet_directory() . $rel_path;
@@ -165,9 +170,11 @@ function gls_enqueue_page_home_css() {
 }
 
 // Frontend normal: solo se encola en front page o en el template home.
-function gls_enqueue_page_home_css_frontend() {
-	if ( is_front_page()
-		|| is_page_template( 'page-home-nueva.php' )
+function gls_enqueue_page_home_css_frontend()
+{
+	if (
+		is_front_page()
+		|| is_page_template('page-home-nueva.php')
 	) {
 		gls_enqueue_page_home_css();
 	}
@@ -186,7 +193,8 @@ add_action('elementor/preview/enqueue_styles', 'gls_enqueue_page_home_css', 20);
    en WP Admin O cuando es la front page (template forzado
    programáticamente por gls_force_home_template).
 ====================================================== */
-function gls_enqueue_litepicker_home() {
+function gls_enqueue_litepicker_home()
+{
 
 	if (!is_front_page() && !is_page_template('page-home-nueva.php')) {
 		return;
@@ -232,7 +240,8 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_litepicker_home', 30);
    (y cualquier futuro template que incluya secciones luxury).
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
-function gls_enqueue_sections_luxury_css() {
+function gls_enqueue_sections_luxury_css()
+{
 
 	if (!is_page_template('page-luxury-section-demo.php')) {
 		return;
@@ -259,7 +268,8 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_sections_luxury_css');
    Cargado solo cuando se usa el template luxury section demo.
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
-function gls_enqueue_sections_intro_css() {
+function gls_enqueue_sections_intro_css()
+{
 
 	if (!is_page_template('page-luxury-section-demo.php')) {
 		return;
@@ -287,15 +297,16 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_sections_intro_css');
    Cargado solo cuando se usa el template luxury section demo.
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
-function gls_enqueue_publics_slides_css() {
+function gls_enqueue_publics_slides_css()
+{
 
-	if ( !is_page_template('page-luxury-section-demo.php') ) {
+	if (!is_page_template('page-luxury-section-demo.php')) {
 		return;
 	}
 
 	$file = get_stylesheet_directory() . '/css/gls-publics-slides.css';
 
-	if ( !file_exists($file) ) {
+	if (!file_exists($file)) {
 		return;
 	}
 
@@ -315,15 +326,16 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_publics_slides_css');
    Cargado solo cuando se usa el template luxury section demo.
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
-function gls_enqueue_section_stack_cta_css() {
+function gls_enqueue_section_stack_cta_css()
+{
 
-	if ( !is_page_template('page-luxury-section-demo.php') ) {
+	if (!is_page_template('page-luxury-section-demo.php') && !is_page_template('page-home-nueva.php')) {
 		return;
 	}
 
 	$file = get_stylesheet_directory() . '/css/gls-section-stack-cta.css';
 
-	if ( !file_exists($file) ) {
+	if (!file_exists($file)) {
 		return;
 	}
 
@@ -344,15 +356,16 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_section_stack_cta_css');
    page-propietarios.php asignado explícitamente.
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
-function gls_enqueue_lead_contact_css() {
+function gls_enqueue_lead_contact_css()
+{
 
-	if ( !is_page('propietarios') && !is_page_template('page-propietarios.php') ) {
+	if (!is_page('propietarios') && !is_page_template('page-propietarios.php')) {
 		return;
 	}
 
 	$file = get_stylesheet_directory() . '/css/gls-section-lead-contact.css';
 
-	if ( !file_exists($file) ) {
+	if (!file_exists($file)) {
 		return;
 	}
 
@@ -375,7 +388,8 @@ add_action('elementor/preview/enqueue_styles',        'gls_enqueue_lead_contact_
    ENQUEUE ARCHIVE APARTAMENTOS CSS
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
-function gls_enqueue_archive_apartamentos_css() {
+function gls_enqueue_archive_apartamentos_css()
+{
 
 	if (!is_post_type_archive('apartamentos')) {
 		return;

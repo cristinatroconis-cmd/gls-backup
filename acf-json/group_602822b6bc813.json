@@ -1,7 +1,117 @@
 {
     "key": "group_602822b6bc813",
     "title": "Banner con datos",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_602822bf2158e",
+            "label": "Bloque de datos",
+            "name": "bloque_de_datos",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Agregar Fila",
+            "sub_fields": [
+                {
+                    "key": "field_602822fe21590",
+                    "label": "Prefijo",
+                    "name": "prefijo",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_602822bf2158e"
+                },
+                {
+                    "key": "field_602822e12158f",
+                    "label": "Número",
+                    "name": "numero",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "parent_repeater": "field_602822bf2158e"
+                },
+                {
+                    "key": "field_6028230721591",
+                    "label": "Sufijo",
+                    "name": "sufijo",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_602822bf2158e"
+                },
+                {
+                    "key": "field_6028231b21592",
+                    "label": "Texto complementario",
+                    "name": "texto_complementario",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_602822bf2158e"
+                }
+            ],
+            "rows_per_page": 20
+        }
+    ],
     "location": [
         [
             {
@@ -11,15 +121,15 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 16,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
-    "modified": 1627278546
+    "modified": 1775430328
 }

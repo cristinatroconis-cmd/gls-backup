@@ -28,7 +28,6 @@ get_header();
     get_template_part('template-parts/home-intro-marca');
     get_template_part('template-parts/home-publics-slides');
     get_template_part('template-parts/home-experiencias');
-    get_template_part('template-parts/home-modalidades');
     get_template_part('template-parts/gls-section-stack-cta');
     ?>
 

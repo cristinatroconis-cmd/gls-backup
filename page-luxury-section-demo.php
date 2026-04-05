@@ -14,39 +14,38 @@ get_header();
     /* 1. Page Hero (shared across non-home pages) */
     get_template_part('template-parts/gls-page-hero');
 
-    /* 2. Stack CTA Section (H2 title left + 3 secondary CTA buttons right) */
-    get_template_part('template-parts/gls-section-stack-cta');
-
-    /* 3. Intro Editorial Section */
+    /* 2. Intro Editorial Section */
     get_template_part('template-parts/gls-section-intro');
 
-    /* 4. Luxury Split Section – default variant (image right) */
-    get_template_part( 'template-parts/gls-section-split', null, [
+    /* 3. Luxury Split Section – default variant (image right) */
+    get_template_part('template-parts/gls-section-split', null, [
         'layout' => 'image-right',
-    ] );
+    ]);
 
-    /* 4b. Luxury Split Section – reversed variant (image left, light background) */
-    get_template_part( 'template-parts/gls-section-split', null, [
+    /* 3b. Luxury Split Section – reversed variant (image left, light background) */
+    get_template_part('template-parts/gls-section-split', null, [
         'layout'     => 'image-left',
         'prefix'     => 'gls_split_b',
-    ] );
+    ]);
 
-    /* 5. Publics Slides – reads ACF from this page; shows fallback when ACF is empty */
-    get_template_part( 'template-parts/home-publics-slides', null, [
+    /* 4. Publics Slides – reads ACF from this page; shows fallback when ACF is empty */
+    get_template_part('template-parts/home-publics-slides', null, [
         'object_id' => get_the_ID(),
         'fallback'  => [
             [
                 'title'  => 'Para Propietarios',
                 'text'   => '<p>Gestión integral de tu apartamento turístico: reservas, limpieza, mantenimiento y atención al huésped. Tú descansas, nosotros trabajamos.</p>',
-                'button' => [ 'url' => '/propietarios/', 'title' => 'Soy propietario', 'target' => '_self' ],
+                'button' => ['url' => '/propietarios/', 'title' => 'Soy propietario', 'target' => '_self'],
             ],
             [
                 'title'  => 'Para Viajeros',
                 'text'   => '<p>Apartamentos de lujo en el corazón de Granada. Estancias únicas con el confort de un hotel y la libertad de tu propio espacio.</p>',
-                'button' => [ 'url' => '/apartamentos/', 'title' => 'Ver apartamentos', 'target' => '_self' ],
+                'button' => ['url' => '/apartamentos/', 'title' => 'Ver apartamentos', 'target' => '_self'],
             ],
         ],
-    ] );
+    ]);
+    /* 5. Stack CTA Section (H2 title left + 3 secondary CTA buttons right) */
+    get_template_part('template-parts/gls-section-stack-cta');
     ?>
 
 </main><!-- /.site-main -->

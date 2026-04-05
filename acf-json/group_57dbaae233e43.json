@@ -1,7 +1,80 @@
 {
     "key": "group_57dbaae233e43",
     "title": "Equipo",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_57dbab4d839fd",
+            "label": "Puesto de trabajo",
+            "name": "puesto_de_trabajo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "wpml_cf_preferences": "0"
+        },
+        {
+            "key": "field_60afc1e886f12",
+            "label": "Campo de trabajo",
+            "name": "campo_de_trabajo",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "especialidades": "especialidades"
+            },
+            "allow_null": 0,
+            "other_choice": 1,
+            "save_other_choice": 1,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "array",
+            "wpml_cf_preferences": "0"
+        },
+        {
+            "key": "field_60afc24387694",
+            "label": "Icono",
+            "name": "icono",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "wpml_cf_preferences": "0"
+        }
+    ],
     "location": [
         [
             {
@@ -11,7 +84,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 12,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -26,9 +99,9 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
-    "modified": 1627316282
+    "modified": 1775430328
 }

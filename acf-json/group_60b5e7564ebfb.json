@@ -1,7 +1,50 @@
 {
     "key": "group_60b5e7564ebfb",
     "title": "Contenido en varias columnas",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_60b5e75ae9228",
+            "label": "Contenido",
+            "name": "contenido",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_60b5e766e9229",
+            "label": "Número de columnas",
+            "name": "columnas",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
     "location": [
         [
             {
@@ -11,15 +54,15 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 31,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
-    "modified": 1627278528
+    "modified": 1775430372
 }

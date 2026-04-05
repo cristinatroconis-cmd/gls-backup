@@ -1,7 +1,28 @@
 {
     "key": "group_602cf2a464a03",
     "title": "Wising",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_602cf2b6f5797",
+            "label": "Contenido",
+            "name": "contenido",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
     "location": [
         [
             {
@@ -11,15 +32,15 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 24,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
-    "modified": 1627278536
+    "modified": 1775430329
 }

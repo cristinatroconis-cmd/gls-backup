@@ -1,7 +1,25 @@
 {
     "key": "group_6523cfd86b848",
     "title": "Botón CTA",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_6523cfd9cf363",
+            "label": "Enlace",
+            "name": "enlace",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "wpml_cf_preferences": 1
+        }
+    ],
     "location": [
         [
             {
@@ -11,16 +29,16 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 3,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
     "acfml_field_group_mode": "translation",
-    "modified": 1712076004
+    "modified": 1775430220
 }

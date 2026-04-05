@@ -1,7 +1,78 @@
 {
     "key": "group_602984601b567",
     "title": "Texto con imagen",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_60298467adef4",
+            "label": "Contenido",
+            "name": "contenido",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_60298477adef5",
+            "label": "Imagen",
+            "name": "imagen",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_602984cbadef6",
+            "label": "Orden",
+            "name": "orden",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "flex-row": "TEXTO | IMAGEN",
+                "flex-row-reverse": "IMAGEN | TEXTO"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "flex-row",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
     "location": [
         [
             {
@@ -11,15 +82,15 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 18,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
-    "modified": 1627289192
+    "modified": 1775430328
 }
