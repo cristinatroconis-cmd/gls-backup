@@ -1,0 +1,103 @@
+{
+    "key": "group_6803gls_split02",
+    "title": "GLS \u2013 Split Section B (Luxury Demo \u2013 Reversed)",
+    "fields": [
+        {
+            "key": "field_6803split_b_eyebrow",
+            "label": "Eyebrow B (etiqueta peque\u00f1a sobre el t\u00edtulo)",
+            "name": "gls_split_b_eyebrow",
+            "type": "text",
+            "instructions": "Texto peque\u00f1o en may\u00fasculas que aparece sobre el t\u00edtulo. Ejemplo: \u201cOur Suites\u201d.",
+            "required": 0,
+            "placeholder": "Our Suites",
+            "maxlength": 60
+        },
+        {
+            "key": "field_6803split_b_title",
+            "label": "T\u00edtulo B (H2)",
+            "name": "gls_split_b_title",
+            "type": "text",
+            "instructions": "T\u00edtulo principal de la secci\u00f3n (variante invertida).",
+            "required": 0,
+            "placeholder": "Elegance Meets Andalusian Soul",
+            "maxlength": 120
+        },
+        {
+            "key": "field_6803split_b_text",
+            "label": "Texto del cuerpo B",
+            "name": "gls_split_b_text",
+            "type": "textarea",
+            "instructions": "P\u00e1rrafo descriptivo debajo del t\u00edtulo (variante invertida).",
+            "required": 0,
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_6803split_b_link_primary",
+            "label": "Bot\u00f3n principal B (CTA)",
+            "name": "gls_split_b_link_primary",
+            "type": "link",
+            "instructions": "Enlace del bot\u00f3n principal (fondo dorado). Deja vac\u00edo para ocultar.",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_6803split_b_link_secondary",
+            "label": "Enlace secundario B",
+            "name": "gls_split_b_link_secondary",
+            "type": "link",
+            "instructions": "Enlace de texto secundario (sin fondo). Deja vac\u00edo para ocultar.",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_6803split_b_image",
+            "label": "Imagen B",
+            "name": "gls_split_b_image",
+            "type": "image",
+            "instructions": "Imagen de la columna visual (variante invertida). Tama\u00f1o recomendado: 800\u00d7600 px o superior.",
+            "required": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_6803split_b_bg_variant",
+            "label": "Variante de fondo B",
+            "name": "gls_split_b_bg_variant",
+            "type": "select",
+            "instructions": "Elige el color de fondo de la secci\u00f3n (variante invertida).",
+            "required": 0,
+            "choices": {
+                "": "Blanco (por defecto)",
+                "light": "Crema claro (--main-color)",
+                "dark": "Oscuro / negro"
+            },
+            "default_value": "light",
+            "allow_null": 1,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-luxury-section-demo.php"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "Campos ACF para la secci\u00f3n split invertida (imagen a la izquierda). Se muestran en p\u00e1ginas con la plantilla \u201cLuxury Section Demo\u201d.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1743716100
+}

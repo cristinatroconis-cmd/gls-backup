@@ -17,8 +17,16 @@ get_header();
     /* 2. Intro Editorial Section */
     get_template_part('template-parts/gls-section-intro');
 
-    /* 3. Luxury Split Section */
-    get_template_part('template-parts/gls-section-split');
+    /* 3. Luxury Split Section – default variant (image right) */
+    get_template_part( 'template-parts/gls-section-split', null, [
+        'layout' => 'image-right',
+    ] );
+
+    /* 3b. Luxury Split Section – reversed variant (image left, light background) */
+    get_template_part( 'template-parts/gls-section-split', null, [
+        'layout'     => 'image-left',
+        'prefix'     => 'gls_split_b',
+    ] );
 
     /* 4. Publics Slides – reads ACF from this page; shows fallback when ACF is empty */
     get_template_part( 'template-parts/home-publics-slides', null, [
