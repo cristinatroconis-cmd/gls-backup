@@ -2,7 +2,61 @@
 
 ## 2026-04
 
-### 2026-04-05 — Sección Stack CTA + reglas de arquitectura CSS/ACF *(local, sin PR abierto)*
+### 2026-04-06 — Página Propietarios + limpieza de ACF
+
+#### Página Propietarios — nueva estructura con secciones GLS (PRs #15, #16, #17)
+
+Se reconstruye `page-propietarios.php` para usar el sistema de secciones GLS.
+
+**Estructura final del template:**
+1. `gls-page-hero` — cabecera de página
+2. `gls-section-intro` — intro editorial (ACF-driven)
+3. `gls-section-split` (variant A, `layout: image-right`, prefix `gls_split`)
+4. `gls-section-split` (variant B, `layout: image-left`, prefix `gls_split_b`)
+5. Sección contacto legacy — Bootstrap grid + ACF + GF shortcode (ver decisión abajo)
+6. `the_content()` — contenido del editor (si existe)
+
+**Archivos modificados:**
+- `page-propietarios.php`
+- `template-parts/gls-section-lead-contact.php` — se corrige que el texto del botón usa `link['title']` de ACF (no texto hardcoded)
+- `template-parts/gls-section-split.php` — limpieza menor
+- `inc/enqueues.php` — CSS de secciones se carga condicionalmente para el template propietarios
+
+**Decisión: sección contacto con markup legacy**
+La sección contacto se implementa con markup Bootstrap heredado en lugar de `gls-section-lead-contact` template-part para preservar:
+- El `id` de la sección (`contacto-home-block_183f14bd8cd37e7c607d2bd9cf0118a6`) que usan CSS, JS y tracking existentes
+- Las clases y estructura Bootstrap que mantienen el formulario funcionando
+- La lógica de ACF admite dos grupos de campos por compatibilidad con instancias existentes:
+  - `gls_contact_*` (Field Group `group_gls_lead_contact_01`, adjunto al template propietarios)
+  - `titulo` / `subtitulo` / `formulario` / `video` (grupo legacy como fallback)
+
+---
+
+#### ACF — mejoras en labels e instrucciones de editor
+
+Se actualizan los Field Groups para mejorar la experiencia del editor. No hay cambios de estructura de datos.
+
+**Archivos modificados:**
+- `acf-json/group_6803gls_split01.json` — labels e instrucciones de campos split A
+- `acf-json/group_6803gls_split02.json` — labels e instrucciones de campos split B
+- `acf-json/group_gls_stack_cta01.json` — ajuste menor de labels
+- `acf-json/group_intro_section_01.json` — labels e instrucciones de sección intro
+
+---
+
+#### ACF — nuevos campos en grupo Contacto
+
+Se añaden campos al grupo ACF `group_602a0f8454873` (sección Contacto):
+- `titulo` — texto del encabezado
+- `subtitulo` — texto secundario / descripción
+- `formulario` — relación al formulario GF
+- `video` — URL del vídeo de fondo
+
+Estos campos son el fallback legacy leído en `page-propietarios.php` cuando los campos `gls_contact_*` están vacíos.
+
+---
+
+### 2026-04-05 — Sección Stack CTA + reglas de arquitectura CSS/ACF
 
 #### Nueva sección: Stack CTA
 

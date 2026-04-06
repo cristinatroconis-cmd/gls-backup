@@ -189,7 +189,7 @@ Reglas:
 
 ---
 
-### `gls-section-stack-cta` *(WIP — local, sin PR abierto)*
+### `gls-section-stack-cta`
 
 **Descripción:** Sección tipo "stack header" — H2 a la izquierda + 3 botones CTA secundarios a la derecha.  
 Inspiración conceptual: patrón `section-content_stack` de Elementor, implementado en modo GLS (ACF + PHP + CSS propio).
@@ -219,6 +219,28 @@ is_page_template('page-luxury-section-demo.php') || is_page_template('page-home-
 ```
 
 **Demo / QA:** Usar la página con template `Luxury Section Demo` (`page-luxury-section-demo.php`).
+
+---
+
+### `page-propietarios.php`
+
+**Template Name:** `Propietarios`  
+Cargado también por jerarquía WP para el slug `propietarios`.
+
+**Estructura de secciones:**
+1. `gls-page-hero` — cabecera de página (ACF)
+2. `gls-section-intro` — intro editorial (ACF)
+3. `gls-section-split` — layout image-right, prefix `gls_split` (ACF)
+4. `gls-section-split` — layout image-left, prefix `gls_split_b` (ACF)
+5. Sección contacto *(markup legacy Bootstrap)* — ACF + GF shortcode
+6. `the_content()` — contenido del editor
+
+**Decisión: sección contacto con markup legacy**  
+La sección contacto usa Bootstrap grid heredada en lugar del template-part `gls-section-lead-contact`, para preservar el `id` de la sección (`contacto-home-block_183f14bd8cd37e7c607d2bd9cf0118a6`), que es referenciado por CSS, JS y herramientas de tracking. Cambiar el markup rompería esos vínculos.
+
+**Campos ACF del contacto** (dos grupos por compatibilidad):
+- Preferentes: `gls_contact_title`, `gls_contact_text`, `gls_contact_form_shortcode`, `gls_contact_media_type`, `gls_contact_video_mp4` (Field Group `group_gls_lead_contact_01`)
+- Fallback legacy: `titulo`, `subtitulo`, `formulario`, `video` (`group_602a0f8454873`)
 
 ---
 
