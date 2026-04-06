@@ -1,67 +1,123 @@
 {
     "key": "group_intro_section_01",
-    "title": "GLS \u2013 Intro Section (Editorial)",
+    "title": "GLS – Intro Section (Editorial)",
     "fields": [
         {
             "key": "field_intro_eyebrow",
-            "label": "Eyebrow (etiqueta peque\u00f1a)",
+            "label": "Eyebrow (etiqueta pequeña)",
             "name": "gls_intro_eyebrow",
+            "aria-label": "",
             "type": "text",
-            "instructions": "Texto breve en may\u00fasculas que aparece sobre el t\u00edtulo. Ejemplo: \u201cGranada Luxury Suites\u201d. M\u00e1ximo 60 caracteres.",
+            "instructions": "Texto breve en mayúsculas que aparece sobre el título. Ejemplo: “Granada Luxury Suites”. Máximo 60 caracteres.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placeholder": "Granada Luxury Suites",
-            "maxlength": 60
+            "maxlength": 60,
+            "default_value": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_intro_title",
-            "label": "T\u00edtulo principal (H2)",
+            "label": "Título principal (H2)",
             "name": "gls_intro_title",
+            "aria-label": "",
             "type": "text",
-            "instructions": "T\u00edtulo centrado de la secci\u00f3n introductoria. Se muestra en tipograf\u00eda display (Bell MT). M\u00e1ximo 120 caracteres.",
+            "instructions": "Título centrado de la sección introductoria. Se muestra en tipografía display (Bell MT). Máximo 120 caracteres.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placeholder": "Where History Meets Luxury",
-            "maxlength": 120
+            "maxlength": 120,
+            "default_value": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_intro_text",
             "label": "Texto descriptivo",
             "name": "gls_intro_text",
+            "aria-label": "",
             "type": "textarea",
-            "instructions": "P\u00e1rrafo debajo del t\u00edtulo. Mantén 2\u20133 frases para conservar el ritmo visual. El texto se centra autom\u00e1ticamente.",
+            "instructions": "Párrafo debajo del título. Mantén 2–3 frases para conservar el ritmo visual. El texto se centra automáticamente.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 4,
-            "new_lines": "wpautop"
+            "new_lines": "wpautop",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_intro_variant",
             "label": "Variante de fondo",
             "name": "gls_intro_variant",
+            "aria-label": "",
             "type": "select",
-            "instructions": "Elige el color de fondo de la secci\u00f3n introductoria.",
+            "instructions": "Elige el color de fondo de la sección introductoria.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "light": "Crema claro (--main-color, por defecto)",
                 "accent": "Dorado (--accent-color)",
-                "dark": "Oscuro / negro"
+                "dark": "Oscuro \/ negro"
             },
             "default_value": "light",
             "allow_null": 0,
-            "ui": 1
+            "ui": 1,
+            "multiple": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_intro_align",
-            "label": "Alineaci\u00f3n del texto",
+            "label": "Alineación del texto",
             "name": "gls_intro_align",
+            "aria-label": "",
             "type": "select",
-            "instructions": "Centrado es el estilo editorial por defecto. Izquierda para variantes m\u00e1s lineales.",
+            "instructions": "Centrado es el estilo editorial por defecto. Izquierda para variantes más lineales.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "center": "Centrado (por defecto)",
                 "left": "Izquierda"
             },
             "default_value": "center",
             "allow_null": 0,
-            "ui": 1
+            "ui": 1,
+            "multiple": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value",
+            "create_options": 0,
+            "save_options": 0
         }
     ],
     "location": [
@@ -71,9 +127,16 @@
                 "operator": "==",
                 "value": "page-luxury-section-demo.php"
             }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "3438"
+            }
         ]
     ],
-    "menu_order": 5,
+    "menu_order": 33,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -82,8 +145,9 @@
         "the_content"
     ],
     "active": true,
-    "description": "Campos ACF para la secci\u00f3n intro editorial (headline + texto centrado, luxury clean). Se muestran en p\u00e1ginas con la plantilla \u201cLuxury Section Demo\u201d.",
+    "description": "Campos ACF para la sección intro editorial (headline + texto centrado, luxury clean). Se muestran en páginas con la plantilla “Luxury Section Demo”.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1743800000
+    "acfml_field_group_mode": "advanced",
+    "modified": 1775509437
 }
