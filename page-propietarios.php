@@ -30,76 +30,90 @@ get_header();
 		'prefix' => 'gls_split_b',
 	]);
 
-	/* 5. Contacto Section – ACF fields from group_602a0f8454873 (page 3438 / acf/contacto block) */
-	$ct_titulo     = get_field( 'titulo' );
-	$ct_subtitulo  = get_field( 'subtitulo' );
-	$ct_formulario = get_field( 'formulario' );
-	$ct_video      = get_field( 'video' );
-
 	/*
-	 * gravity_forms_field returns the form ID (int|string) when allow_multiple = 0.
-	 * Guard against array/object returns just in case (e.g. allow_multiple enabled).
+	 * 5. Contacto Section – legacy Bootstrap layout restored.
+	 *
+	 * Field priority:
+	 *   1. gls_contact_* fields (group_gls_lead_contact_01, assigned to this template).
+	 *   2. titulo / subtitulo / formulario / video fields (group_602a0f8454873,
+	 *      assigned to page 3438 / acf/contacto block) – fallback for existing installs.
+	 *
+	 * The section ID is kept verbatim to preserve CSS selectors, JS anchors,
+	 * and tracking references (ACF block suffix: block_183f14bd8cd37e7c607d2bd9cf0118a6).
 	 */
+
+	/* -- Title & body text -- */
+	$ct_titulo    = get_field( 'gls_contact_title' ) ?: get_field( 'titulo' );
+	$ct_subtitulo = get_field( 'gls_contact_text' )  ?: get_field( 'subtitulo' );
+
+	/* -- Form shortcode -- */
 	$ct_form_sc = '';
-	if ( $ct_formulario ) {
-		if ( is_array( $ct_formulario ) ) {
-			$form_id = isset( $ct_formulario['id'] ) ? intval( $ct_formulario['id'] ) : 0;
-		} else {
-			$form_id = intval( $ct_formulario );
-		}
-		if ( $form_id > 0 ) {
-			$ct_form_sc = '[gravityforms id="' . $form_id . '" title="false" description="false" ajax="true"]';
+	$ct_form_shortcode = get_field( 'gls_contact_form_shortcode' );
+	if ( $ct_form_shortcode ) {
+		$ct_form_sc = $ct_form_shortcode;
+	} else {
+		$ct_formulario = get_field( 'formulario' );
+		if ( $ct_formulario ) {
+			$form_id = is_array( $ct_formulario )
+				? ( isset( $ct_formulario['id'] ) ? intval( $ct_formulario['id'] ) : 0 )
+				: intval( $ct_formulario );
+			if ( $form_id > 0 ) {
+				$ct_form_sc = '[gravityforms id="' . $form_id . '" title="false" description="false" ajax="true"]';
+			}
 		}
 	}
 
-	/*
-	 * The section ID below is the legacy block ID from the original page content
-	 * (ACF block suffix: block_183f14bd8cd37e7c607d2bd9cf0118a6). It is kept
-	 * verbatim to preserve existing CSS, JS anchors, and tracking references.
-	 */
+	/* -- Video URL: prefer gls_contact_video_mp4 (file field), fallback to video (url field) -- */
+	$ct_video = '';
+	$media_type = get_field( 'gls_contact_media_type' );
+	$video_mp4  = get_field( 'gls_contact_video_mp4' );
+	if ( $media_type === 'video' && is_array( $video_mp4 ) && ! empty( $video_mp4['url'] ) ) {
+		$ct_video = esc_url( $video_mp4['url'] );
+	} else {
+		$video_legacy = get_field( 'video' );
+		if ( $video_legacy ) {
+			$ct_video = esc_url( $video_legacy );
+		}
+	}
 	?>
 
 	<section id="contacto-home-block_183f14bd8cd37e7c607d2bd9cf0118a6" class="contacto-home">
+		<div class="container-fluid">
+			<div class="row reverse-movil">
 
-		<div class="contacto-home__inner">
+				<div class="col-lg-6 col-12 col-md-6 d-flex justify-content-center align-items-center faq">
+					<div class="col-12 col-md-10 col-lg-8 formulario-container">
 
-			<div class="contacto-home__content">
+						<?php if ( $ct_titulo ) : ?>
+							<h2 class="mb-3 bellmt"><?php echo esc_html( $ct_titulo ); ?></h2>
+						<?php endif; ?>
 
-				<?php if ( $ct_titulo ) : ?>
-					<h2 class="contacto-home__title">
-						<?php echo esc_html( $ct_titulo ); ?>
-					</h2>
-				<?php endif; ?>
+						<?php if ( $ct_subtitulo ) : ?>
+							<div class="mb-3"><?php echo wp_kses_post( $ct_subtitulo ); ?></div>
+						<?php endif; ?>
 
-				<?php if ( $ct_subtitulo ) : ?>
-					<div class="contacto-home__text">
-						<?php echo wp_kses_post( $ct_subtitulo ); ?>
+						<div id="form-container" class="form-container">
+							<a id="gform"></a>
+							<?php if ( $ct_form_sc ) : ?>
+								<?php echo do_shortcode( $ct_form_sc ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php endif; ?>
+						</div>
+
 					</div>
-				<?php endif; ?>
+				</div><!-- /.col faq -->
 
-				<?php if ( $ct_form_sc ) : ?>
-					<div class="contacto-home__form">
-						<?php echo do_shortcode( $ct_form_sc ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					</div>
-				<?php endif; ?>
+				<div class="col-md-6">
+					<?php if ( $ct_video ) : ?>
+						<div class="video-background">
+							<video autoplay muted playsinline loop aria-hidden="true">
+								<source src="<?php echo esc_url( $ct_video ); ?>" type="video/mp4">
+							</video>
+						</div>
+					<?php endif; ?>
+				</div><!-- /.col video -->
 
-			</div><!-- /.contacto-home__content -->
-
-			<?php if ( $ct_video ) : ?>
-				<div class="contacto-home__media video-background">
-					<video
-						src="<?php echo esc_url( $ct_video ); ?>"
-						autoplay
-						muted
-						loop
-						playsinline
-						aria-hidden="true"
-					></video>
-				</div><!-- /.contacto-home__media -->
-			<?php endif; ?>
-
-		</div><!-- /.contacto-home__inner -->
-
+			</div><!-- /.row -->
+		</div><!-- /.container-fluid -->
 	</section><!-- #contacto-home-block_183f14bd8cd37e7c607d2bd9cf0118a6 -->
 
 	<?php
