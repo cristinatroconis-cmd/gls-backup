@@ -1,81 +1,152 @@
 {
     "key": "group_6803gls_split02",
-    "title": "GLS \u2013 Split Section B (Luxury Demo \u2013 Reversed)",
+    "title": "GLS – Split Section B (Luxury Demo – Reversed)",
     "fields": [
         {
             "key": "field_6803split_b_eyebrow",
-            "label": "Eyebrow B (etiqueta peque\u00f1a sobre el t\u00edtulo)",
+            "label": "Eyebrow B (etiqueta pequeña sobre el título)",
             "name": "gls_split_b_eyebrow",
+            "aria-label": "",
             "type": "text",
-            "instructions": "Texto peque\u00f1o en may\u00fasculas que aparece sobre el t\u00edtulo. Ejemplo: \u201cOur Suites\u201d.",
+            "instructions": "Texto pequeño en mayúsculas que aparece sobre el título. Ejemplo: “Our Suites”.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placeholder": "Our Suites",
-            "maxlength": 60
+            "maxlength": 60,
+            "default_value": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6803split_b_title",
-            "label": "T\u00edtulo B (H2)",
+            "label": "Título B (H2)",
             "name": "gls_split_b_title",
+            "aria-label": "",
             "type": "text",
-            "instructions": "T\u00edtulo principal de la secci\u00f3n (variante invertida).",
+            "instructions": "Título principal de la sección (variante invertida).",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placeholder": "Elegance Meets Andalusian Soul",
-            "maxlength": 120
+            "maxlength": 120,
+            "default_value": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6803split_b_text",
             "label": "Texto del cuerpo B",
             "name": "gls_split_b_text",
+            "aria-label": "",
             "type": "textarea",
-            "instructions": "P\u00e1rrafo descriptivo debajo del t\u00edtulo (variante invertida).",
+            "instructions": "Párrafo descriptivo debajo del título (variante invertida).",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 4,
-            "new_lines": "br"
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_6803split_b_link_primary",
-            "label": "Bot\u00f3n principal B (CTA)",
+            "label": "Botón principal B (CTA)",
             "name": "gls_split_b_link_primary",
+            "aria-label": "",
             "type": "link",
-            "instructions": "Enlace del bot\u00f3n principal (fondo dorado). Deja vac\u00edo para ocultar.",
+            "instructions": "Enlace del botón principal (fondo dorado). Deja vacío para ocultar.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array"
         },
         {
             "key": "field_6803split_b_link_secondary",
             "label": "Enlace secundario B",
             "name": "gls_split_b_link_secondary",
+            "aria-label": "",
             "type": "link",
-            "instructions": "Enlace de texto secundario (sin fondo). Deja vac\u00edo para ocultar.",
+            "instructions": "Enlace de texto secundario (sin fondo). Deja vacío para ocultar.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array"
         },
         {
             "key": "field_6803split_b_image",
             "label": "Imagen B",
             "name": "gls_split_b_image",
+            "aria-label": "",
             "type": "image",
-            "instructions": "Imagen de la columna visual (variante invertida). Tama\u00f1o recomendado: 800\u00d7600 px o superior.",
+            "instructions": "Imagen de la columna visual (variante invertida). Tamaño recomendado: 800×600 px o superior.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "medium",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_6803split_b_bg_variant",
             "label": "Variante de fondo B",
             "name": "gls_split_b_bg_variant",
+            "aria-label": "",
             "type": "select",
-            "instructions": "Elige el color de fondo de la secci\u00f3n (variante invertida).",
+            "instructions": "Elige el color de fondo de la sección (variante invertida).",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "": "Blanco (por defecto)",
                 "light": "Crema claro (--main-color)",
-                "dark": "Oscuro / negro"
+                "dark": "Oscuro \/ negro"
             },
             "default_value": "light",
             "allow_null": 1,
-            "ui": 1
+            "ui": 1,
+            "multiple": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value",
+            "create_options": 0,
+            "save_options": 0
         }
     ],
     "location": [
@@ -85,9 +156,16 @@
                 "operator": "==",
                 "value": "page-luxury-section-demo.php"
             }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "3438"
+            }
         ]
     ],
-    "menu_order": 20,
+    "menu_order": 36,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -96,8 +174,9 @@
         "the_content"
     ],
     "active": true,
-    "description": "Campos ACF para la secci\u00f3n split invertida (imagen a la izquierda). Se muestran en p\u00e1ginas con la plantilla \u201cLuxury Section Demo\u201d.",
+    "description": "Campos ACF para la sección split invertida (imagen a la izquierda). Se muestran en páginas con la plantilla “Luxury Section Demo”.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1743716100
+    "acfml_field_group_mode": "advanced",
+    "modified": 1775509490
 }
