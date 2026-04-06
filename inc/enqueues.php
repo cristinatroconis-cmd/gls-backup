@@ -237,13 +237,14 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_litepicker_home', 30);
 /* =====================================================
    GLS – Enqueue gls-sections-luxury.css
    Cargado solo cuando se usa el template luxury section demo
-   (y cualquier futuro template que incluya secciones luxury).
+   o la página Propietarios (y cualquier futuro template que
+   incluya secciones luxury).
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
 function gls_enqueue_sections_luxury_css()
 {
 
-	if (!is_page_template('page-luxury-section-demo.php')) {
+	if (!is_page_template('page-luxury-section-demo.php') && !is_page_template('page-propietarios.php') && !is_page('propietarios')) {
 		return;
 	}
 
@@ -265,13 +266,14 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_sections_luxury_css');
 
 /* =====================================================
    GLS – Enqueue gls-sections-intro.css
-   Cargado solo cuando se usa el template luxury section demo.
+   Cargado solo cuando se usa el template luxury section demo
+   o la página Propietarios.
    Depende de gls-components para heredar tokens y componentes.
 ===================================================== */
 function gls_enqueue_sections_intro_css()
 {
 
-	if (!is_page_template('page-luxury-section-demo.php')) {
+	if (!is_page_template('page-luxury-section-demo.php') && !is_page_template('page-propietarios.php') && !is_page('propietarios')) {
 		return;
 	}
 

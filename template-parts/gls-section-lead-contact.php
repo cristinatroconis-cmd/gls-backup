@@ -72,7 +72,11 @@ if ( $bg_variant ) {
 
 			<?php if ( $form_shortcode ) : ?>
 				<div class="gls-lead-contact__form">
-					<?php echo do_shortcode(wp_kses_post($form_shortcode)); ?>
+					<?php
+					// Shortcode stored via ACF (editor-only access). Pass directly so kses
+					// does not strip valid shortcode attributes before do_shortcode runs.
+					echo do_shortcode( $form_shortcode ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					?>
 				</div>
 			<?php else : ?>
 				<div class="gls-lead-contact__form gls-lead-contact__form--placeholder">
