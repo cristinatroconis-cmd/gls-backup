@@ -1,7 +1,82 @@
 {
     "key": "group_602a0f8454873",
     "title": "Contacto",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_602a0f852c181",
+            "label": "Título",
+            "name": "titulo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602a0f852c190",
+            "label": "Subtitulo",
+            "name": "subtitulo",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0
+        },
+        {
+            "key": "field_602a0f852c1ba",
+            "label": "Formulario",
+            "name": "formulario",
+            "aria-label": "",
+            "type": "gravity_forms_field",
+            "instructions": "Espacio para el contenido del formulario",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "allow_null": 0,
+            "allow_multiple": 0
+        },
+        {
+            "key": "field_651fd36e80ccf",
+            "label": "Vídeo",
+            "name": "video",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
     "location": [
         [
             {
@@ -9,9 +84,16 @@
                 "operator": "==",
                 "value": "acf\/contacto"
             }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "3438"
+            }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 19,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -21,5 +103,6 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1696860210
+    "acfml_field_group_mode": "translation",
+    "modified": 1775510450
 }
