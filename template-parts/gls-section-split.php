@@ -48,24 +48,6 @@ if ( $layout_arg === 'image-left' ) {
     $img_pos = ( $acf_pos === 'left' ) ? 'left' : 'right';
 }
 
-/* ---- Fallback primary link ---- */
-if ( empty( $link_prim ) ) {
-    $link_prim = [
-        'url'    => get_permalink(),
-        'title'  => __( 'Explore More', 'gls-backup' ),
-        'target' => '',
-    ];
-}
-
-/* ---- Fallback secondary link ---- */
-if ( empty( $link_sec ) ) {
-    $link_sec = [
-        'url'    => get_permalink(),
-        'title'  => __( 'Learn More', 'gls-backup' ),
-        'target' => '',
-    ];
-}
-
 /* ---- Image ---- */
 $img_url = '';
 $img_alt = '';
