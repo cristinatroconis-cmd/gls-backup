@@ -11,14 +11,16 @@
 
 ## Estructura clave
 
-### `/acf-json/`
+### ACF JSON
 - Export automático de ACF
-- Fuente de verdad de campos
-- Versionado en Git
+- **Fuente de verdad de campos** — debe versionarse siempre
+- Commit inmediato tras crear o editar cualquier Field Group
 
 ### `/css/`
 - Todos los estilos del proyecto
 - No usar `style.css` para desarrollo de componentes
+- Cada componente reutilizable tiene su propio archivo CSS (nunca meter estilos de componente en `page-home.css` ni en `style.css`)
+- Los tokens de diseño (`:root`) van **únicamente** en `gls-root.css`
 
 ### `/inc/`
 Funciones auxiliares e integraciones:
@@ -33,6 +35,8 @@ Componentes reutilizables:
 - cards
 - bloques ACF
 - secciones compartidas
+
+Cada componente tiene su propio CSS en `/css/` y su propia función de enqueue condicional en `inc/enqueues.php`. No reutilizar `page-home.css` fuera de Home.
 
 ### `/bloques/`
 Templates de bloques ACF:
@@ -160,6 +164,83 @@ Estas reglas se gestionan en `.gitignore` en la raíz del repo.
 3. Añadir la regla correspondiente a `.gitignore`
 4. Re-hacer el commit sin el archivo problemático
 5. Verificar con `git status` antes de volver a hacer push
+
+---
+
+## Componentes de sección
+
+### Patrón GLS para secciones reutilizables
+
+Cada sección sigue esta estructura:
+
+| Pieza | Ubicación | Notas |
+|-------|-----------|-------|
+| Template part | `template-parts/gls-section-<nombre>.php` | Lógica + render |
+| CSS | `css/gls-section-<nombre>.css` | Solo estilos de esa sección |
+| Enqueue | `inc/enqueues.php` | Condicional por template o slug |
+| ACF Field Group | `acf-json/group_gls_<nombre>*.json` | Adjunto por Page Template, no globalmente |
+
+Reglas:
+- El CSS va **siempre** en `/css/`, nunca en `style.css`.
+- No reutilizar `page-home.css` para componentes fuera de Home.
+- Cada componente tiene su propio enqueue condicional (`is_page_template()`).
+- El Field Group de ACF se adjunta por **Page Template** (no globalmente).
+- `/acf-json/` es fuente de verdad; hacer commit tras cada cambio de campo.
+
+---
+
+### `gls-section-stack-cta`
+
+**Descripción:** Sección tipo "stack header" — H2 a la izquierda + 3 botones CTA secundarios a la derecha.  
+Inspiración conceptual: patrón `section-content_stack` de Elementor, implementado en modo GLS (ACF + PHP + CSS propio).
+
+**Archivos:**
+- `template-parts/gls-section-stack-cta.php`
+- `css/gls-section-stack-cta.css`
+- `acf-json/group_gls_stack_cta01.json`
+- Enqueue: `gls_enqueue_section_stack_cta_css()` en `inc/enqueues.php`
+
+**ACF Fields (Field Group: "GLS – Stack CTA Section (Luxury Demo)"):**
+
+| Campo | Tipo | Fallback |
+|-------|------|---------|
+| `gls_stack_title` | Textarea | "Descubre Granada Luxury Suites" |
+| `gls_stack_cta_1` | Link | `{ url: '#', title: 'turístico' }` |
+| `gls_stack_cta_2` | Link | `{ url: '#', title: 'empresas' }` |
+| `gls_stack_cta_3` | Link | `{ url: '#', title: 'propietarios' }` |
+
+- Los CTAs usan estilo secundario `.btn-fix-outline` (definido en `gls-root.css`).
+- Si un campo Link está vacío, el fallback renderiza `href="#"` para que la sección no quede rota.
+- El Field Group se adjunta por Page Template: `page-luxury-section-demo.php`.
+
+**Enqueue condicional:**
+```
+is_page_template('page-luxury-section-demo.php') || is_page_template('page-home-nueva.php')
+```
+
+**Demo / QA:** Usar la página con template `Luxury Section Demo` (`page-luxury-section-demo.php`).
+
+---
+
+### `page-propietarios.php`
+
+**Template Name:** `Propietarios`  
+Cargado también por jerarquía WP para el slug `propietarios`.
+
+**Estructura de secciones:**
+1. `gls-page-hero` — cabecera de página (ACF)
+2. `gls-section-intro` — intro editorial (ACF)
+3. `gls-section-split` — layout image-right, prefix `gls_split` (ACF)
+4. `gls-section-split` — layout image-left, prefix `gls_split_b` (ACF)
+5. Sección contacto *(markup legacy Bootstrap)* — ACF + GF shortcode
+6. `the_content()` — contenido del editor
+
+**Decisión: sección contacto con markup legacy**  
+La sección contacto usa Bootstrap grid heredada en lugar del template-part `gls-section-lead-contact`, para preservar el `id` de la sección (`contacto-home-block_183f14bd8cd37e7c607d2bd9cf0118a6`), que es referenciado por CSS, JS y herramientas de tracking. Cambiar el markup rompería esos vínculos.
+
+**Campos ACF del contacto** (dos grupos por compatibilidad):
+- Preferentes: `gls_contact_title`, `gls_contact_text`, `gls_contact_form_shortcode`, `gls_contact_media_type`, `gls_contact_video_mp4` (Field Group `group_gls_lead_contact_01`)
+- Fallback legacy: `titulo`, `subtitulo`, `formulario`, `video` (`group_602a0f8454873`)
 
 ---
 
