@@ -92,6 +92,13 @@
                 "operator": "==",
                 "value": "3438"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-propietarios.php"
+            }
         ]
     ],
     "menu_order": 32,
@@ -107,5 +114,5 @@
     "show_in_rest": 0,
     "display_title": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1775509328
+    "modified": 1776032665
 }

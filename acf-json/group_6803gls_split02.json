@@ -163,6 +163,13 @@
                 "operator": "==",
                 "value": "3438"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
         ]
     ],
     "menu_order": 36,
@@ -178,5 +185,5 @@
     "show_in_rest": 0,
     "display_title": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1775509490
+    "modified": 1776032690
 }
