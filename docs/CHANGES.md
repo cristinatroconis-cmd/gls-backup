@@ -2,6 +2,46 @@
 
 ## 2026-04
 
+### 2026-04-13 — Flujo seguro Propietarios V2 (borrador en producción)
+
+#### Hecho hoy
+
+1. Se crea en WP Admin la nueva página en borrador:
+  - Título: "Propietarios Nueva"
+  - Slug: `propietarios-nueva`
+  - Estado: `Borrador`
+  - Plantilla: `Propietarios V2`
+2. Se trabaja con una plantilla duplicada para no tocar la página pública existente:
+  - `page-propietarios.php` (actual en producción)
+  - `page-propietarios-v2.php` (nueva versión para edición)
+3. Se añade soporte de estilos para V2 en condiciones de enqueue (objetivo: que V2 herede los estilos luxury/intro/contact igual que la plantilla anterior).
+4. Se revisan reglas ACF para que los grupos aparezcan también al editar la V2 (evitar dependencia de un ID de página concreto).
+
+#### Backup operativo
+
+- Se deja copia de seguridad de `functions.php` con nombre:
+  - `functions-antes-de-propietarios-nueva.php`
+- Ruta de respaldo:
+  - `Google Drive/Mi unidad/functions-antes-de-propietarios-nueva.php`
+
+#### Siguiente paso para pasar de `/propietarios-nueva/` a `/propietarios/`
+
+1. Validar en borrador que diseño, ACF, formularios y media estén correctos.
+2. Congelar cambios de contenido durante la ventana de publicación (15-30 min).
+3. En WP Admin:
+  - Renombrar/guardar la página pública actual para liberar slug `propietarios`.
+  - Cambiar slug de la nueva página de `propietarios-nueva` a `propietarios`.
+4. Verificar que la nueva página mantiene plantilla `Propietarios V2`.
+5. Revisar menús/enlaces internos que apunten al slug antiguo.
+6. Purgar caché:
+  - plugin de caché (WP Fastest Cache)
+  - caché de navegador
+7. QA post-publicación:
+  - desktop + móvil
+  - carga de CSS de secciones
+  - envío de formulario
+  - indexación SEO esperada
+
 ### 2026-04-06 — Página Propietarios + limpieza de ACF
 
 #### Página Propietarios — nueva estructura con secciones GLS (PRs #15, #16, #17)

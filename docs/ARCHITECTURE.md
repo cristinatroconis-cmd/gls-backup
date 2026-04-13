@@ -244,6 +244,39 @@ La sección contacto usa Bootstrap grid heredada en lugar del template-part `gls
 
 ---
 
+### Patrón de publicación segura: `Propietarios V2`
+
+Objetivo: permitir edición de contenido por cliente sin tocar la página pública existente.
+
+#### Flujo recomendado
+
+1. Mantener la página pública actual (`/propietarios/`) sin cambios de estructura.
+2. Crear página nueva en borrador con slug alterno (`/propietarios-nueva/`).
+3. Asignar plantilla nueva (`page-propietarios-v2.php`).
+4. Habilitar los mismos enqueues CSS de la versión pública también para V2.
+5. Ajustar location rules ACF para que muestren campos en V2 por template (no por ID fijo).
+6. Editar y validar contenido en borrador.
+7. Hacer switch controlado de slug cuando se apruebe publicación.
+
+#### Regla de bajo riesgo para producción
+
+- Evitar reemplazos completos de `functions.php` cuando no sea necesario.
+- Preferir cambios mínimos de alcance local:
+  - condiciones de enqueue
+  - templates específicos
+  - field groups ACF necesarios
+
+#### Checklist de switch a `/propietarios/`
+
+1. Backup previo de `functions.php` y de la página a reemplazar.
+2. Liberar slug `propietarios` en la página antigua.
+3. Cambiar slug de la nueva página a `propietarios`.
+4. Confirmar plantilla activa correcta en la nueva página.
+5. Purgar cachés (plugin + navegador).
+6. Validar frontend, formulario y enlaces internos.
+
+---
+
 ## Decisiones importantes
 - No usar Gutenberg nativo como constructor principal
 - No usar Elementor como base estructural
