@@ -244,7 +244,7 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_litepicker_home', 30);
 function gls_enqueue_sections_luxury_css()
 {
 
-	if (!is_page_template('page-luxury-section-demo.php') && !is_page_template('page-propietarios.php') && !is_page('propietarios')) {
+	if (!is_page_template('page-luxury-section-demo.php') && !is_page_template('page-propietarios.php') && !is_page_template('page-propietarios-v2.php') && !is_page('propietarios')) {
 		return;
 	}
 
@@ -273,7 +273,7 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_sections_luxury_css');
 function gls_enqueue_sections_intro_css()
 {
 
-	if (!is_page_template('page-luxury-section-demo.php') && !is_page_template('page-propietarios.php') && !is_page('propietarios')) {
+	if (!is_page_template('page-luxury-section-demo.php') && !is_page_template('page-propietarios.php') && !is_page_template('page-propietarios-v2.php') && !is_page('propietarios')) {
 		return;
 	}
 
@@ -361,7 +361,7 @@ add_action('wp_enqueue_scripts', 'gls_enqueue_section_stack_cta_css');
 function gls_enqueue_lead_contact_css()
 {
 
-	if (!is_page('propietarios') && !is_page_template('page-propietarios.php')) {
+	if (!is_page('propietarios') && !is_page_template('page-propietarios.php') && !is_page_template('page-propietarios-v2.php')) {
 		return;
 	}
 
